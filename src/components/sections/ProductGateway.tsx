@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 
 export function ProductGateway() {
   const limeImg = PlaceHolderImages.find((img) => img.id === "limelife-card");
@@ -35,16 +35,25 @@ export function ProductGateway() {
               <p className="text-muted-foreground leading-relaxed">
                 Skincare profesional y maquillaje de alta gama utilizado por los mejores artistas del mundo, ahora a tu alcance con ingredientes limpios.
               </p>
-              <Button className="w-full rounded-none h-12 text-sm uppercase tracking-widest" asChild>
-                <a 
-                  href="https://www.limelife.com/PALMIRAGARDE/login?ReturnUrl=/PALMIRAGARDE/overview" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2"
-                >
-                  Ver productos <ExternalLink className="h-4 w-4" />
-                </a>
-              </Button>
+              <div className="flex flex-col gap-3">
+                <Button className="w-full rounded-none h-12 text-sm uppercase tracking-widest" asChild>
+                  <a 
+                    href="#limelife-detalles" 
+                    className="flex items-center justify-center gap-2"
+                  >
+                    Explorar categorías <ArrowRight className="h-4 w-4" />
+                  </a>
+                </Button>
+                <Button variant="ghost" className="text-xs uppercase tracking-widest font-bold text-muted-foreground hover:text-primary" asChild>
+                  <a 
+                    href="https://www.limelife.com/PALMIRAGARDE/login?ReturnUrl=/PALMIRAGARDE/overview" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ir directo a la tienda <ExternalLink className="h-3 w-3 ml-1" />
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
 

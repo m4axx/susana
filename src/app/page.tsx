@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { WellnessTip } from "@/components/sections/WellnessTip";
 import { AboutMe } from "@/components/sections/AboutMe";
 import { ProductGateway } from "@/components/sections/ProductGateway";
+import { LimeLifeShowcase } from "@/components/sections/LimeLifeShowcase";
 import { Promotions } from "@/components/sections/Promotions";
 import { Publications } from "@/components/sections/Publications";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -17,6 +18,7 @@ export default function Home() {
       <WellnessTip />
       <AboutMe />
       <ProductGateway />
+      <LimeLifeShowcase />
       <Promotions />
       <Publications />
       <FinalCTA />

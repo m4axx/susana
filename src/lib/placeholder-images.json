@@ -41,6 +41,54 @@
       "description": "Natural ingredients blog post",
       "imageUrl": "https://picsum.photos/seed/post2/600/400",
       "imageHint": "herbal ingredients"
+    },
+    {
+      "id": "ll-novedades",
+      "description": "New products arrivals",
+      "imageUrl": "https://picsum.photos/seed/ll-new/600/600",
+      "imageHint": "cosmetic new"
+    },
+    {
+      "id": "ll-sales",
+      "description": "Birthday sales and offers",
+      "imageUrl": "https://picsum.photos/seed/ll-sale/600/600",
+      "imageHint": "beauty discount"
+    },
+    {
+      "id": "ll-maquillaje",
+      "description": "Professional makeup products",
+      "imageUrl": "https://picsum.photos/seed/ll-makeup/600/600",
+      "imageHint": "makeup brush"
+    },
+    {
+      "id": "ll-piel",
+      "description": "Skincare collection",
+      "imageUrl": "https://picsum.photos/seed/ll-skin/600/600",
+      "imageHint": "skincare cream"
+    },
+    {
+      "id": "ll-cabello",
+      "description": "Hair care products",
+      "imageUrl": "https://picsum.photos/seed/ll-hair/600/600",
+      "imageHint": "hair care"
+    },
+    {
+      "id": "ll-colecciones",
+      "description": "Full beauty collections",
+      "imageUrl": "https://picsum.photos/seed/ll-col/600/600",
+      "imageHint": "beauty kit"
+    },
+    {
+      "id": "ll-icons",
+      "description": "Iconic products",
+      "imageUrl": "https://picsum.photos/seed/ll-icon/600/600",
+      "imageHint": "luxury cosmetic"
+    },
+    {
+      "id": "ll-unete",
+      "description": "Join the LimeLife team",
+      "imageUrl": "https://picsum.photos/seed/ll-join/600/600",
+      "imageHint": "happy woman"
     }
   ]
 }
