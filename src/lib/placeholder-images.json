@@ -77,18 +77,6 @@
       "description": "Full beauty collections",
       "imageUrl": "https://picsum.photos/seed/ll-col/600/600",
       "imageHint": "beauty kit"
-    },
-    {
-      "id": "ll-icons",
-      "description": "Iconic products",
-      "imageUrl": "https://picsum.photos/seed/ll-icon/600/600",
-      "imageHint": "luxury cosmetic"
-    },
-    {
-      "id": "ll-unete",
-      "description": "Join the LimeLife team",
-      "imageUrl": "https://picsum.photos/seed/ll-join/600/600",
-      "imageHint": "happy woman"
     }
   ]
 }
