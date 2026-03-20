@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -15,7 +16,7 @@ export function ProductGateway() {
             <span className="text-accent uppercase tracking-[0.4em] text-[10px] font-bold">Curated Selection</span>
             <h2 className="text-5xl md:text-7xl font-headline italic leading-none">Las Marcas</h2>
           </div>
-          <p className="text-muted-foreground max-w-md font-light leading-relaxed">
+          <p className="text-muted-foreground max-w-md font-light leading-relaxed text-lg">
             He seleccionado personalmente estas firmas por su compromiso innegociable con la pureza, la innovación y el lujo responsable.
           </p>
         </div>
