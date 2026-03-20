@@ -1,3 +1,46 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Soft nature and wellness background",
+      "imageUrl": "https://picsum.photos/seed/palmira-hero/1920/1080",
+      "imageHint": "nature wellness"
+    },
+    {
+      "id": "about-me",
+      "description": "Professional portrait of a beauty guide",
+      "imageUrl": "https://picsum.photos/seed/palmira-profile/600/800",
+      "imageHint": "professional woman"
+    },
+    {
+      "id": "limelife-card",
+      "description": "High-end skincare and makeup products",
+      "imageUrl": "https://picsum.photos/seed/limelife/800/600",
+      "imageHint": "skincare makeup"
+    },
+    {
+      "id": "ringana-card",
+      "description": "Fresh natural cosmetics",
+      "imageUrl": "https://picsum.photos/seed/ringana/800/600",
+      "imageHint": "natural cosmetics"
+    },
+    {
+      "id": "promo-1",
+      "description": "Wellness promotion banner",
+      "imageUrl": "https://picsum.photos/seed/promo1/800/400",
+      "imageHint": "spa beauty"
+    },
+    {
+      "id": "post-1",
+      "description": "Skincare routine blog post",
+      "imageUrl": "https://picsum.photos/seed/post1/600/400",
+      "imageHint": "skincare routine"
+    },
+    {
+      "id": "post-2",
+      "description": "Natural ingredients blog post",
+      "imageUrl": "https://picsum.photos/seed/post2/600/400",
+      "imageHint": "herbal ingredients"
+    }
+  ]
 }
