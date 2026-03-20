@@ -36,9 +36,9 @@ export function ProductGateway() {
               </div>
             </div>
             <div className="space-y-6 px-4">
-              <h3 className="text-4xl font-headline italic">LimeLife by Alcone</h3>
+              <h3 className="text-4xl font-headline italic">LimeLife</h3>
               <p className="text-muted-foreground font-light leading-relaxed text-lg">
-                El estándar de oro del maquillaje profesional. Ingredientes limpios con un rendimiento impecable bajo cualquier luz.
+                El estándar de oro de la cosmética profesional. Ingredientes limpios con un rendimiento impecable bajo cualquier luz.
               </p>
               <Button 
                 variant="outline" 

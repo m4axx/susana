@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { ExternalLink } from "lucide-react";
@@ -15,11 +17,16 @@ export function LimeLifeShowcase() {
   return (
     <section className="py-32 px-6 bg-[#0A0A0A]" id="limelife-detalles">
       <div className="max-w-7xl mx-auto space-y-24">
-        <div className="text-center space-y-6">
+        <div className="text-center space-y-8">
           <span className="text-accent uppercase tracking-[0.5em] text-[10px] font-bold">The Boutique</span>
-          <h2 className="text-5xl md:text-7xl font-headline text-white italic">LimeLife by Alcone</h2>
+          
+          {/* Logo Placeholder - Asumiendo logo-limelife.png en public */}
+          <div className="flex justify-center">
+            <h2 className="text-5xl md:text-7xl font-headline text-white italic">LimeLife</h2>
+          </div>
+          
           <p className="text-white/40 max-w-xl mx-auto font-light leading-relaxed">
-            Calidad profesional para el uso diario. Fórmulas limpias, pigmentación extrema y resultados de pasarela.
+            Excelencia profesional para tu ritual diario. Fórmulas botánicas de alta pigmentación y resultados impecables.
           </p>
         </div>
 
@@ -61,7 +68,7 @@ export function LimeLifeShowcase() {
             target="_blank"
             className="inline-block text-white text-sm tracking-[0.4em] uppercase font-bold border-b-2 border-accent pb-4 hover:tracking-[0.5em] transition-all"
           >
-            Ver catálogo completo LimeLife
+            Explorar catálogo completo LimeLife
           </a>
         </div>
       </div>
