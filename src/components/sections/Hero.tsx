@@ -1,51 +1,54 @@
-
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { ChevronDown } from "lucide-react";
 
 export function Hero() {
   const heroImg = PlaceHolderImages.find((img) => img.id === "hero-bg");
 
   return (
-    <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-svh w-full flex flex-col items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
         <Image
           src={heroImg?.imageUrl || ""}
-          alt="Palmira Garden Wellness"
+          alt="Palmira Garde Luxury Beauty"
           fill
-          className="object-cover opacity-60 scale-105"
+          className="object-cover opacity-70 scale-110"
           priority
-          data-ai-hint="nature wellness background"
+          data-ai-hint="luxury makeup detail"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
       </div>
 
-      <div className="relative z-10 text-center max-w-4xl px-6">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-headline mb-6 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          Bienvenida a <br />
-          <span className="text-primary italic">Palmira Garden</span>
+      <div className="relative z-10 text-center max-w-5xl px-6 animate-fade-up">
+        <span className="text-accent uppercase tracking-[0.5em] text-[10px] md:text-xs mb-6 block font-bold">The Art of Pure Beauty</span>
+        <h1 className="text-6xl md:text-8xl lg:text-9xl font-headline mb-8 text-white leading-[0.9] tracking-tighter">
+          Palmira <br />
+          <span className="italic text-accent font-normal">Garde</span>
         </h1>
-        <p className="text-lg md:text-xl font-body text-muted-foreground mb-10 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-200">
-          Tu espacio de belleza, salud y bienestar consciente. <br className="hidden md:block" />
-          Acompañándote en el camino hacia tu mejor versión natural.
+        <p className="text-sm md:text-lg font-body text-white/60 mb-12 max-w-xl mx-auto leading-relaxed tracking-wide">
+          Descubre el lujo consciente. Una selección de alta gama para quienes buscan resultados profesionales y frescura absoluta.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
+        
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Button 
             size="lg" 
-            className="rounded-none px-10 h-14 text-base tracking-widest uppercase font-semibold"
+            className="bg-white text-black hover:bg-accent hover:text-white px-12 h-14 text-[10px] tracking-[0.3em] uppercase font-bold rounded-none w-full sm:w-auto"
             asChild
           >
-            <a href="#productos">Descubrir productos</a>
+            <a href="#productos">Explorar Catálogo</a>
           </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="rounded-none px-10 h-14 text-base tracking-widest uppercase border-primary text-primary hover:bg-primary/5"
-            asChild
+          <a 
+            href="#limelife-detalles" 
+            className="text-white text-[10px] tracking-[0.3em] uppercase font-bold border-b border-white/30 pb-2 hover:border-accent transition-all"
           >
-            <a href="https://wa.me/your-whatsapp-number" target="_blank">Contactar conmigo</a>
-          </Button>
+            Tienda Oficial
+          </a>
         </div>
+      </div>
+
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/40">
+        <ChevronDown className="h-6 w-6" />
       </div>
     </section>
   );

@@ -1,51 +1,50 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 45 14% 96%;
+    --background: 30 20% 98%;
     --foreground: 20 10% 10%;
     --card: 0 0% 100%;
     --card-foreground: 20 10% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 10% 10%;
-    --primary: 47 14% 47%;
-    --primary-foreground: 45 14% 98%;
-    --secondary: 45 20% 90%;
-    --secondary-foreground: 47 14% 30%;
-    --muted: 45 10% 90%;
-    --muted-foreground: 47 5% 45%;
-    --accent: 38 70% 69%;
+    --primary: 20 10% 10%;
+    --primary-foreground: 30 20% 98%;
+    --secondary: 30 15% 90%;
+    --secondary-foreground: 20 10% 10%;
+    --muted: 30 10% 94%;
+    --muted-foreground: 20 5% 45%;
+    --accent: 35 45% 75%; /* Soft Gold / Champagne */
     --accent-foreground: 20 10% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 45 10% 88%;
-    --input: 45 10% 88%;
-    --ring: 47 14% 47%;
-    --radius: 0.2rem;
+    --border: 30 10% 90%;
+    --input: 30 10% 90%;
+    --ring: 20 10% 10%;
+    --radius: 0rem; /* Sharp edges for luxury feel */
   }
   .dark {
-    --background: 20 10% 10%;
-    --foreground: 45 14% 96%;
-    --card: 20 10% 12%;
-    --card-foreground: 45 14% 96%;
-    --popover: 20 10% 12%;
-    --popover-foreground: 45 14% 96%;
-    --primary: 45 14% 96%;
-    --primary-foreground: 20 10% 10%;
-    --secondary: 20 10% 15%;
-    --secondary-foreground: 45 14% 96%;
+    --background: 20 10% 5%;
+    --foreground: 30 20% 98%;
+    --card: 20 10% 8%;
+    --card-foreground: 30 20% 98%;
+    --popover: 20 10% 8%;
+    --popover-foreground: 30 20% 98%;
+    --primary: 30 20% 98%;
+    --primary-foreground: 20 10% 5%;
+    --secondary: 20 10% 12%;
+    --secondary-foreground: 30 20% 98%;
     --muted: 20 10% 15%;
-    --muted-foreground: 45 10% 70%;
-    --accent: 38 70% 69%;
-    --accent-foreground: 20 10% 10%;
+    --muted-foreground: 30 10% 70%;
+    --accent: 35 45% 75%;
+    --accent-foreground: 20 10% 5%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 20 10% 20%;
-    --input: 20 10% 20%;
-    --ring: 45 14% 96%;
+    --border: 20 10% 15%;
+    --input: 20 10% 15%;
+    --ring: 30 20% 98%;
   }
 }
 
@@ -54,9 +53,15 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground font-body antialiased selection:bg-accent/30;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline;
+    @apply font-headline tracking-tight;
   }
+}
+
+/* Custom Smooth Transitions */
+.hover-gold:hover {
+  color: hsl(var(--accent));
+  transition: color 0.3s ease;
 }

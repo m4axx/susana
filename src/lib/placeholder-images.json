@@ -2,81 +2,75 @@
   "placeholderImages": [
     {
       "id": "hero-bg",
-      "description": "Soft nature and wellness background",
-      "imageUrl": "https://picsum.photos/seed/palmira-hero/1920/1080",
-      "imageHint": "nature wellness"
+      "description": "High-end luxury makeup visual with soft textures",
+      "imageUrl": "https://picsum.photos/seed/palmira-elite-1/1920/1080",
+      "imageHint": "luxury makeup"
     },
     {
       "id": "about-me",
-      "description": "Professional portrait of a beauty guide",
-      "imageUrl": "https://picsum.photos/seed/palmira-profile/600/800",
-      "imageHint": "professional woman"
+      "description": "Elegant portrait of Palmira Garde",
+      "imageUrl": "https://picsum.photos/seed/palmira-elite-profile/800/1200",
+      "imageHint": "luxury portrait"
     },
     {
       "id": "limelife-card",
-      "description": "High-end skincare and makeup products",
-      "imageUrl": "https://picsum.photos/seed/limelife/800/600",
-      "imageHint": "skincare makeup"
+      "description": "Professional makeup tools and products",
+      "imageUrl": "https://picsum.photos/seed/palmira-ll-pro/1000/1200",
+      "imageHint": "makeup professional"
     },
     {
       "id": "ringana-card",
-      "description": "Fresh natural cosmetics",
-      "imageUrl": "https://picsum.photos/seed/ringana/800/600",
-      "imageHint": "natural cosmetics"
-    },
-    {
-      "id": "promo-1",
-      "description": "Wellness promotion banner",
-      "imageUrl": "https://picsum.photos/seed/promo1/800/400",
-      "imageHint": "spa beauty"
-    },
-    {
-      "id": "post-1",
-      "description": "Skincare routine blog post",
-      "imageUrl": "https://picsum.photos/seed/post1/600/400",
-      "imageHint": "skincare routine"
-    },
-    {
-      "id": "post-2",
-      "description": "Natural ingredients blog post",
-      "imageUrl": "https://picsum.photos/seed/post2/600/400",
-      "imageHint": "herbal ingredients"
+      "description": "Fresh herbal skincare close-up",
+      "imageUrl": "https://picsum.photos/seed/palmira-ringana-fresh/1000/1200",
+      "imageHint": "herbal skincare"
     },
     {
       "id": "ll-novedades",
-      "description": "New products arrivals",
-      "imageUrl": "https://picsum.photos/seed/ll-new/600/600",
-      "imageHint": "cosmetic new"
+      "description": "New cosmetic releases",
+      "imageUrl": "https://picsum.photos/seed/palmira-new/800/800",
+      "imageHint": "makeup palette"
     },
     {
       "id": "ll-sales",
-      "description": "Birthday sales and offers",
-      "imageUrl": "https://picsum.photos/seed/ll-sale/600/600",
-      "imageHint": "beauty discount"
+      "description": "Elegant product presentation for sales",
+      "imageUrl": "https://picsum.photos/seed/palmira-sale/800/800",
+      "imageHint": "luxury cosmetic"
     },
     {
       "id": "ll-maquillaje",
-      "description": "Professional makeup products",
-      "imageUrl": "https://picsum.photos/seed/ll-makeup/600/600",
-      "imageHint": "makeup brush"
+      "description": "Fine detail of professional makeup",
+      "imageUrl": "https://picsum.photos/seed/palmira-makeup/800/800",
+      "imageHint": "lipstick detail"
     },
     {
       "id": "ll-piel",
-      "description": "Skincare collection",
-      "imageUrl": "https://picsum.photos/seed/ll-skin/600/600",
-      "imageHint": "skincare cream"
+      "description": "Clean skin texture and cream",
+      "imageUrl": "https://picsum.photos/seed/palmira-skin/800/800",
+      "imageHint": "skin texture"
     },
     {
       "id": "ll-cabello",
-      "description": "Hair care products",
-      "imageUrl": "https://picsum.photos/seed/ll-hair/600/600",
-      "imageHint": "hair care"
+      "description": "Luxurious hair care treatment",
+      "imageUrl": "https://picsum.photos/seed/palmira-hair/800/800",
+      "imageHint": "shiny hair"
     },
     {
       "id": "ll-colecciones",
-      "description": "Full beauty collections",
-      "imageUrl": "https://picsum.photos/seed/ll-col/600/600",
-      "imageHint": "beauty kit"
+      "description": "Complete premium beauty kit",
+      "imageUrl": "https://picsum.photos/seed/palmira-kit/800/800",
+      "imageHint": "beauty collection"
+    },
+    {
+      "id": "post-1",
+      "description": "Morning beauty ritual",
+      "imageUrl": "https://picsum.photos/seed/blog-1/800/600",
+      "imageHint": "beauty ritual"
+    },
+    {
+      "id": "post-2",
+      "description": "The power of fresh ingredients",
+      "imageUrl": "https://picsum.photos/seed/blog-2/800/600",
+      "imageHint": "fresh herbs"
     }
   ]
 }
