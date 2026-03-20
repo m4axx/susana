@@ -6,11 +6,16 @@ import { Menu, X, ShoppingBag } from "lucide-react";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showLogo, setShowLogo] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 20);
+      // Se muestra el logo solo después de pasar el título del Hero (aprox 300px)
+      // para evitar la repetición del nombre en la pantalla.
+      setShowLogo(scrollY > 300);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -30,8 +35,11 @@ export function Header() {
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
-        {/* Logo */}
-        <div className="text-2xl md:text-3xl font-headline tracking-tighter flex items-center gap-2">
+        {/* Logo - Controlado por showLogo para evitar repetición con el Hero */}
+        <div className={cn(
+          "text-2xl md:text-3xl font-headline tracking-tighter flex items-center gap-2 transition-all duration-700",
+          showLogo ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+        )}>
           <span className="font-bold">Palmira</span>
           <span className="italic font-normal text-accent">Garde</span>
         </div>
