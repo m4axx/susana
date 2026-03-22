@@ -19,8 +19,8 @@ export function ProductGateway() {
         <div className="grid md:grid-cols-2 gap-20">
           {/* LimeLife Card */}
           <div className="group space-y-10">
-            <div className="relative aspect-[4/5] overflow-hidden bg-black flex items-center justify-center p-12 shadow-sm transition-all duration-500 group-hover:shadow-xl">
-              <div className="relative w-full h-32">
+            <div className="relative aspect-[3/2] overflow-hidden bg-black flex items-center justify-center p-12 shadow-sm transition-all duration-500 group-hover:shadow-xl">
+              <div className="relative w-full h-24">
                 <Image
                   src="/Newlogo.svg"
                   alt="LimeLife Professional"
@@ -29,7 +29,7 @@ export function ProductGateway() {
                   priority
                 />
               </div>
-              <div className="absolute top-8 right-8 flex gap-1">
+              <div className="absolute top-6 right-8 flex gap-1">
                 {[1, 2, 3, 4, 5].map(s => <Star key={s} className="h-3 w-3 fill-accent text-accent" />)}
               </div>
               <div className="absolute inset-0 border border-white/10 m-4 pointer-events-none" />
@@ -52,9 +52,9 @@ export function ProductGateway() {
           </div>
 
           {/* Ringana Card */}
-          <div className="group space-y-10 md:mt-32">
-            <div className="relative aspect-[4/5] overflow-hidden bg-[#FAF9F6] flex items-center justify-center p-12 shadow-sm transition-all duration-500 group-hover:shadow-xl border border-muted">
-              <div className="relative w-full h-32">
+          <div className="group space-y-10 md:mt-24">
+            <div className="relative aspect-[3/2] overflow-hidden bg-[#FAF9F6] flex items-center justify-center p-12 shadow-sm transition-all duration-500 group-hover:shadow-xl border border-muted">
+              <div className="relative w-full h-24">
                 <Image
                   src="/ringana-logo.svg"
                   alt="Ringana Freshness"
