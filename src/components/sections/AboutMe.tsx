@@ -7,19 +7,19 @@ export function AboutMe() {
   return (
     <section className="py-32 px-6 bg-[#FAF9F6]" id="sobre-mi">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
-        <div className="relative aspect-[3/4] overflow-hidden group shadow-2xl">
+        <div className="relative aspect-[3/2] w-full max-w-lg mx-auto overflow-hidden group shadow-2xl">
           {profileImg?.imageUrl ? (
             <Image
               src={profileImg.imageUrl}
               alt="Palmira Garde"
               fill
               className="object-cover transition-all duration-[2s] hover:scale-105"
-              data-ai-hint="portrait professional beauty"
+              data-ai-hint="professional beauty portrait"
             />
           ) : (
             <div className="w-full h-full bg-muted animate-pulse" />
           )}
-          <div className="absolute inset-0 border-[20px] border-white/30 m-8" />
+          <div className="absolute inset-0 border-[12px] border-white/30 m-4" />
         </div>
         <div className="space-y-12">
           <div className="space-y-4">
