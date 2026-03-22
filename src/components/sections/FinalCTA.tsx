@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { MessageSquare } from "lucide-react";
 
@@ -24,7 +25,7 @@ export function FinalCTA() {
             className="bg-accent hover:bg-white text-black rounded-none h-20 px-16 text-[10px] tracking-[0.4em] uppercase font-bold shadow-2xl transition-all w-full sm:w-auto flex items-center gap-4 mx-auto group"
             asChild
           >
-            <a href="https://wa.me/your-whatsapp-number" target="_blank">
+            <a href="https://wa.me/qr/4JSUW45MSRMZM1" target="_blank">
               <MessageSquare className="h-5 w-5 group-hover:scale-110 transition-transform" /> WhatsApp Concierge
             </a>
           </Button>

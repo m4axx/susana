@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -57,7 +58,7 @@ export function Header() {
             <ShoppingBag className="h-5 w-5" />
           </button>
           <a 
-            href="https://wa.me/your-whatsapp-number" 
+            href="https://wa.me/qr/4JSUW45MSRMZM1" 
             target="_blank"
             className="text-[10px] font-bold uppercase tracking-[0.2em] bg-primary text-primary-foreground px-5 py-3 hover:bg-accent transition-all"
           >
@@ -83,7 +84,7 @@ export function Header() {
         <a href="#blog" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Editorial</a>
         <div className="mt-8">
            <a 
-            href="https://wa.me/your-whatsapp-number" 
+            href="https://wa.me/qr/4JSUW45MSRMZM1" 
             className="text-sm font-bold uppercase tracking-[0.3em] border-b-2 border-accent pb-2"
           >
             WhatsApp Directo
