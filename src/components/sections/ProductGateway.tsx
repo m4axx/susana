@@ -1,13 +1,8 @@
-
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { ArrowRight, Star } from "lucide-react";
 
 export function ProductGateway() {
-  const limeImg = PlaceHolderImages.find((img) => img.id === "limelife-card");
-  const ringImg = PlaceHolderImages.find((img) => img.id === "ringana-card");
-
   return (
     <section className="py-32 px-6 bg-white" id="productos">
       <div className="max-w-7xl mx-auto space-y-24">
@@ -24,17 +19,20 @@ export function ProductGateway() {
         <div className="grid md:grid-cols-2 gap-20">
           {/* LimeLife Card */}
           <div className="group space-y-10">
-            <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-              <Image
-                src={limeImg?.imageUrl || ""}
-                alt="LimeLife Professional"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-[3s]"
-                data-ai-hint="makeup close up"
-              />
-              <div className="absolute top-8 right-8 flex gap-1">
-                {[1,2,3,4,5].map(s => <Star key={s} className="h-4 w-4 fill-accent text-accent" />)}
+            <div className="relative aspect-[4/5] overflow-hidden bg-black flex items-center justify-center p-12 shadow-sm transition-all duration-500 group-hover:shadow-xl">
+              <div className="relative w-full h-32">
+                <Image
+                  src="/Newlogo.svg"
+                  alt="LimeLife Professional"
+                  fill
+                  className="object-contain brightness-0 invert transition-transform duration-700 group-hover:scale-110"
+                  priority
+                />
               </div>
+              <div className="absolute top-8 right-8 flex gap-1">
+                {[1, 2, 3, 4, 5].map(s => <Star key={s} className="h-3 w-3 fill-accent text-accent" />)}
+              </div>
+              <div className="absolute inset-0 border border-white/10 m-4 pointer-events-none" />
             </div>
             <div className="space-y-6 px-4">
               <h3 className="text-4xl font-headline italic">LimeLife</h3>
@@ -55,17 +53,19 @@ export function ProductGateway() {
 
           {/* Ringana Card */}
           <div className="group space-y-10 md:mt-32">
-            <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-              <Image
-                src={ringImg?.imageUrl || ""}
-                alt="Ringana Freshness"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-[3s]"
-                data-ai-hint="natural herbs skincare"
-              />
+            <div className="relative aspect-[4/5] overflow-hidden bg-[#FAF9F6] flex items-center justify-center p-12 shadow-sm transition-all duration-500 group-hover:shadow-xl border border-muted">
+              <div className="relative w-full h-32">
+                <Image
+                  src="/ringana-logo.svg"
+                  alt="Ringana Freshness"
+                  fill
+                  className="object-contain transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
                <div className="absolute bottom-0 left-0 bg-accent text-white px-8 py-3 text-[10px] tracking-[0.3em] font-bold uppercase">
                 Frescura 100%
               </div>
+              <div className="absolute inset-0 border border-black/5 m-4 pointer-events-none" />
             </div>
             <div className="space-y-6 px-4">
               <h3 className="text-4xl font-headline italic">Ringana</h3>
