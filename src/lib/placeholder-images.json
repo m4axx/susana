@@ -71,6 +71,12 @@
       "description": "The power of fresh ingredients",
       "imageUrl": "https://picsum.photos/seed/blog-2/800/600",
       "imageHint": "fresh herbs"
+    },
+    {
+      "id": "promo-1",
+      "description": "Special beauty promotion",
+      "imageUrl": "https://picsum.photos/seed/palmira-promo/1920/1080",
+      "imageHint": "beauty spa"
     }
   ]
 }

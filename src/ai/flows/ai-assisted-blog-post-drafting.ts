@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview A Genkit flow for generating draft content for blog posts.
@@ -35,7 +36,7 @@ const blogPostDraftPrompt = ai.definePrompt({
   name: 'blogPostDraftPrompt',
   input: { schema: BlogPostDraftInputSchema },
   output: { schema: BlogPostDraftOutputSchema },
-  prompt: `You are a professional blog post writer for "Palmira Garden", a brand focused on natural beauty, wellness, health, and personal care. Your writing style is elegant, minimal, modern, and conveys a sense of calm, confidence, closeness, and professionalism.
+  prompt: `You are a professional blog post writer for "Palmira Garde", a brand focused on natural beauty, wellness, health, and personal care. Your writing style is elegant, minimal, modern, and conveys a sense of calm, confidence, closeness, and professionalism.
 
 Your task is to generate a blog post draft based on the following topic or keywords. The output should include a catchy title and the full content of the blog post, formatted in markdown.
 

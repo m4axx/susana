@@ -12,13 +12,15 @@ export function Promotions() {
       <div className="max-w-6xl mx-auto">
         <div className="relative overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex items-center">
           <div className="absolute inset-0 z-0">
-            <Image
-              src={promoImg?.imageUrl || ""}
-              alt="Special Promotion"
-              fill
-              className="object-cover opacity-30 grayscale"
-              data-ai-hint="beauty spa"
-            />
+            {promoImg?.imageUrl && (
+              <Image
+                src={promoImg.imageUrl}
+                alt="Special Promotion"
+                fill
+                className="object-cover opacity-30 grayscale"
+                data-ai-hint="beauty spa"
+              />
+            )}
           </div>
           <div className="relative z-10 p-12 md:p-20 space-y-6 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent text-accent-foreground text-xs font-bold uppercase tracking-widest">

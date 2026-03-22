@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -9,14 +10,16 @@ export function Hero() {
   return (
     <section className="relative h-svh w-full flex flex-col items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
-        <Image
-          src={heroImg?.imageUrl || ""}
-          alt="Palmira Garde Luxury Beauty"
-          fill
-          className="object-cover opacity-70 scale-110"
-          priority
-          data-ai-hint="luxury makeup detail"
-        />
+        {heroImg?.imageUrl && (
+          <Image
+            src={heroImg.imageUrl}
+            alt="Palmira Garde Luxury Beauty"
+            fill
+            className="object-cover opacity-70 scale-110"
+            priority
+            data-ai-hint="luxury makeup detail"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
       </div>
 
