@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
@@ -8,15 +7,17 @@ export function AboutMe() {
   return (
     <section className="py-32 px-6 bg-[#FAF9F6]" id="sobre-mi">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
-        <div className="relative aspect-[3/4] overflow-hidden group">
-          {profileImg?.imageUrl && (
+        <div className="relative aspect-[3/4] overflow-hidden group shadow-2xl">
+          {profileImg?.imageUrl ? (
             <Image
               src={profileImg.imageUrl}
               alt="Palmira Garde"
               fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-[2s]"
-              data-ai-hint="high fashion model portrait"
+              className="object-cover transition-all duration-[2s] hover:scale-105"
+              data-ai-hint="portrait professional beauty"
             />
+          ) : (
+            <div className="w-full h-full bg-muted animate-pulse" />
           )}
           <div className="absolute inset-0 border-[20px] border-white/30 m-8" />
         </div>

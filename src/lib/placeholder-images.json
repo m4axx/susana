@@ -8,9 +8,9 @@
     },
     {
       "id": "about-me",
-      "description": "Elegant portrait of Palmira Garde",
-      "imageUrl": "https://picsum.photos/seed/palmira-elite-profile/800/1200",
-      "imageHint": "luxury portrait"
+      "description": "Retrato elegante de Palmira Garde",
+      "imageUrl": "/susi.jpeg",
+      "imageHint": "palmira garde portrait"
     },
     {
       "id": "limelife-card",
