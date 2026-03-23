@@ -1,3 +1,4 @@
+
 import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
@@ -20,9 +21,9 @@ export function Footer() {
         <div className="space-y-10">
           <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Navegación</h4>
           <ul className="space-y-6 text-muted-foreground text-sm tracking-wide font-medium">
-            <li><a href="#sobre-mi" className="hover:text-accent transition-colors uppercase">El Ritual</a></li>
+            <li><a href="#servicios" className="hover:text-accent transition-colors uppercase">Servicios</a></li>
             <li><a href="#productos" className="hover:text-accent transition-colors uppercase">Colecciones</a></li>
-            <li><a href="#limelife-detalles" className="hover:text-accent transition-colors uppercase">Tienda</a></li>
+            <li><a href="#sobre-mi" className="hover:text-accent transition-colors uppercase">El Ritual</a></li>
             <li><a href="#blog" className="hover:text-accent transition-colors uppercase">Editorial</a></li>
           </ul>
         </div>

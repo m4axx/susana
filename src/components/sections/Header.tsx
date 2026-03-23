@@ -14,8 +14,6 @@ export function Header() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 20);
-      // Se muestra el logo solo después de pasar el título del Hero (aprox 300px)
-      // para evitar la repetición del nombre en la pantalla.
       setShowLogo(scrollY > 300);
     };
     window.addEventListener("scroll", handleScroll);
@@ -28,7 +26,6 @@ export function Header() {
       isScrolled ? "bg-white/80 backdrop-blur-xl py-4 shadow-sm" : "bg-transparent py-8"
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Mobile Menu Toggle */}
         <button 
           className="md:hidden p-2 hover:bg-black/5 transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -36,7 +33,6 @@ export function Header() {
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
-        {/* Logo - Controlado por showLogo para evitar repetición con el Hero */}
         <div className={cn(
           "text-2xl md:text-3xl font-headline tracking-tighter flex items-center gap-2 transition-all duration-700",
           showLogo ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
@@ -45,14 +41,13 @@ export function Header() {
           <span className="italic font-normal text-accent">Garde</span>
         </div>
         
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-12">
-          <a href="#productos" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">Colecciones</a>
+          <a href="#servicios" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">Servicios</a>
+          <a href="#productos" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">Marcas</a>
           <a href="#sobre-mi" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">El Ritual</a>
           <a href="#limelife-detalles" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">Shop</a>
         </nav>
 
-        {/* Action Button */}
         <div className="flex items-center gap-4">
           <button className="p-2 hover:bg-black/5 transition-colors hidden sm:block">
             <ShoppingBag className="h-5 w-5" />
@@ -67,7 +62,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <div className={cn(
         "fixed inset-0 bg-white z-40 transition-transform duration-500 md:hidden flex flex-col items-center justify-center gap-8",
         isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -78,7 +72,8 @@ export function Header() {
         >
           <X className="h-8 w-8" />
         </button>
-        <a href="#productos" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Colecciones</a>
+        <a href="#servicios" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Servicios</a>
+        <a href="#productos" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Marcas</a>
         <a href="#sobre-mi" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">El Ritual</a>
         <a href="#limelife-detalles" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Shop LimeLife</a>
         <a href="#blog" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Editorial</a>

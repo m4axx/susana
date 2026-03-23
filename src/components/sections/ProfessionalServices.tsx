@@ -1,0 +1,172 @@
+
+"use client";
+
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { MessageSquare, Star, ArrowRight, Camera, Brush, Heart } from "lucide-react";
+import { motion } from "framer-motion";
+
+const SERVICES = [
+  {
+    id: "social",
+    title: "Eventos & Social",
+    description: "Realza tu belleza natural con un look sofisticado para cualquier ocasión especial.",
+    price: "Desde 60€",
+    icon: <Star className="h-5 w-5 text-accent" />,
+    imageId: "ll-maquillaje"
+  },
+  {
+    id: "bridal",
+    title: "Novias Elite",
+    description: "Un servicio exclusivo y personalizado para que brilles con luz propia en tu gran día.",
+    price: "Consultar",
+    icon: <Heart className="h-5 w-5 text-accent" />,
+    imageId: "service-bridal"
+  },
+  {
+    id: "artistic",
+    title: "Editorial & Artístico",
+    description: "Creatividad sin límites para sesiones de fotos, moda y proyectos conceptuales.",
+    price: "Desde 90€",
+    icon: <Brush className="h-5 w-5 text-accent" />,
+    imageId: "service-artistic"
+  },
+  {
+    id: "workshop",
+    title: "Clases Automaquillaje",
+    description: "Sesiones VIP donde aprenderás las técnicas profesionales para tu rostro.",
+    price: "Desde 50€",
+    icon: <Camera className="h-5 w-5 text-accent" />,
+    imageId: "ll-colecciones"
+  }
+];
+
+const PORTFOLIO = [
+  { id: "p1", imageId: "portfolio-1", category: "Artístico" },
+  { id: "p2", imageId: "portfolio-2", category: "Glam" },
+  { id: "p3", imageId: "portfolio-3", category: "Editorial" },
+  { id: "p4", imageId: "hero-bg", category: "Social" },
+  { id: "p5", imageId: "service-artistic", category: "Creativo" },
+];
+
+export function ProfessionalServices() {
+  const whatsappUrl = "https://wa.me/qr/4JSUW45MSRMZM1";
+
+  return (
+    <section className="py-24 md:py-32 px-6 bg-[#050505] text-white overflow-hidden" id="servicios">
+      <div className="max-w-7xl mx-auto space-y-24 md:space-y-32">
+        
+        {/* Intro Section */}
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <span className="text-accent uppercase tracking-[0.5em] text-[10px] font-bold block">Artistry & Precision</span>
+              <h2 className="text-5xl md:text-8xl font-headline leading-[1.1]">Arte en el <br /><span className="italic font-normal">Rostro.</span></h2>
+            </div>
+            <p className="text-white/40 text-lg md:text-xl font-light leading-relaxed max-w-lg">
+              Como maquilladora profesional, mi misión es fusionar la técnica de alta definición con una visión artística única. Cada trazo es una declaración de estilo, diseñada para elevar tu esencia y capturar la perfección bajo cualquier lente.
+            </p>
+          </div>
+          <div className="relative aspect-square md:aspect-[4/5] overflow-hidden group">
+            <Image
+              src={PlaceHolderImages.find(img => img.id === "service-artistic")?.imageUrl || ""}
+              alt="Maquillaje Profesional"
+              fill
+              className="object-cover transition-transform duration-[3s] group-hover:scale-110 opacity-80"
+            />
+            <div className="absolute inset-0 border-[1px] border-white/20 m-6" />
+          </div>
+        </div>
+
+        {/* Services Grid */}
+        <div className="space-y-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-12">
+            <h3 className="text-3xl md:text-5xl font-headline italic">Mis Servicios</h3>
+            <p className="text-white/40 text-sm tracking-widest uppercase">Elegancia adaptada a cada ocasión</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {SERVICES.map((service) => (
+              <div key={service.id} className="group bg-white/5 p-8 border border-white/5 hover:border-accent/30 transition-all duration-500 flex flex-col justify-between min-h-[400px]">
+                <div className="space-y-6">
+                  <div className="p-3 bg-accent/10 w-fit">
+                    {service.icon}
+                  </div>
+                  <h4 className="text-2xl font-headline italic">{service.title}</h4>
+                  <p className="text-white/40 text-sm font-light leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+                <div className="pt-8 space-y-6">
+                  <div className="text-accent font-bold tracking-[0.2em] text-[10px] uppercase">
+                    {service.price}
+                  </div>
+                  <Button 
+                    variant="link" 
+                    className="p-0 text-white hover:text-accent h-auto text-[10px] tracking-[0.3em] uppercase font-bold"
+                    asChild
+                  >
+                    <a href={whatsappUrl} target="_blank">Reservar <ArrowRight className="ml-2 h-3 w-3" /></a>
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Portfolio Gallery */}
+        <div className="space-y-16">
+          <div className="text-center space-y-4">
+            <span className="text-accent uppercase tracking-[0.5em] text-[10px] font-bold">The Portfolio</span>
+            <h3 className="text-4xl md:text-6xl font-headline">Galería Creativa</h3>
+          </div>
+          
+          {/* Mobile Horizontal Scroll / Desktop Grid */}
+          <div className="flex overflow-x-auto md:grid md:grid-cols-5 gap-4 pb-8 md:pb-0 scrollbar-hide snap-x">
+            {PORTFOLIO.map((item) => (
+              <div key={item.id} className="relative flex-shrink-0 w-72 md:w-auto aspect-[3/4] overflow-hidden snap-center group cursor-pointer">
+                <Image
+                  src={PlaceHolderImages.find(img => img.id === item.imageId)?.imageUrl || ""}
+                  alt={item.category}
+                  fill
+                  className="object-cover transition-transform duration-[2s] group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                  <span className="text-xs tracking-[0.3em] uppercase font-bold border-b border-accent pb-2">
+                    {item.category}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Final Services CTA */}
+        <div className="text-center pt-20">
+          <div className="inline-block p-12 md:p-20 border border-white/10 relative">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#050505] px-6">
+               <Star className="h-6 w-6 text-accent" />
+            </div>
+            <div className="space-y-8">
+              <h3 className="text-3xl md:text-5xl font-headline italic leading-tight">¿Lista para tu transformación?</h3>
+              <p className="text-white/40 max-w-md mx-auto font-light">
+                Consultas personalizadas para eventos, bodas y proyectos artísticos. Plazas limitadas por temporada.
+              </p>
+              <Button 
+                size="lg"
+                className="bg-accent hover:bg-white text-black rounded-none h-16 px-12 text-[10px] tracking-[0.4em] uppercase font-bold transition-all flex items-center gap-4 mx-auto"
+                asChild
+              >
+                <a href={whatsappUrl} target="_blank">
+                  <MessageSquare className="h-4 w-4" /> Solicitar Presupuesto
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
