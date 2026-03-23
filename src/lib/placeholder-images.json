@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-bg",
-      "description": "High-end luxury makeup visual with soft textures",
-      "imageUrl": "https://picsum.photos/seed/palmira-elite-1/1920/1080",
-      "imageHint": "luxury makeup"
+      "description": "Imagen principal de cabecera Palmira Garde",
+      "imageUrl": "/header.jpg",
+      "imageHint": "luxury beauty background"
     },
     {
       "id": "about-me",
