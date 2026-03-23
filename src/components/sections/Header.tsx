@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X, ShoppingBag } from "lucide-react";
+import Link from "next/link";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,19 +34,19 @@ export function Header() {
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
-        <div className={cn(
+        <Link href="/" className={cn(
           "text-2xl md:text-3xl font-headline tracking-tighter flex items-center gap-2 transition-all duration-700",
           showLogo ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
         )}>
           <span className="font-bold">Palmira</span>
           <span className="italic font-normal text-accent">Garde</span>
-        </div>
+        </Link>
         
         <nav className="hidden md:flex items-center gap-12">
-          <a href="#servicios" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">Servicios</a>
-          <a href="#productos" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">Marcas</a>
-          <a href="#sobre-mi" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">El Ritual</a>
-          <a href="#limelife-detalles" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">Shop</a>
+          <Link href="/servicios" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">Servicios</Link>
+          <Link href="/#productos" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">Marcas</Link>
+          <Link href="/#sobre-mi" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">El Ritual</Link>
+          <Link href="/#limelife-detalles" className="text-[10px] font-semibold uppercase tracking-[0.3em] hover-gold">Shop</Link>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -72,11 +73,11 @@ export function Header() {
         >
           <X className="h-8 w-8" />
         </button>
-        <a href="#servicios" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Servicios</a>
-        <a href="#productos" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Marcas</a>
-        <a href="#sobre-mi" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">El Ritual</a>
-        <a href="#limelife-detalles" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Shop LimeLife</a>
-        <a href="#blog" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Editorial</a>
+        <Link href="/servicios" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Servicios</Link>
+        <Link href="/#productos" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Marcas</Link>
+        <Link href="/#sobre-mi" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">El Ritual</Link>
+        <Link href="/#limelife-detalles" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Shop LimeLife</Link>
+        <Link href="/#blog" onClick={() => setIsMenuOpen(false)} className="text-2xl font-headline italic hover-gold">Editorial</Link>
         <div className="mt-8">
            <a 
             href="https://wa.me/qr/4JSUW45MSRMZM1" 
