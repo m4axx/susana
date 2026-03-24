@@ -15,7 +15,7 @@ export function Header() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 20);
-      setShowLogo(scrollY > 300);
+      setShowLogo(scrollY > 350);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -24,21 +24,21 @@ export function Header() {
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out px-4 md:px-12",
-      isScrolled ? "bg-white/90 backdrop-blur-xl py-4 shadow-sm" : "bg-transparent py-6 md:py-8"
+      isScrolled ? "bg-white/95 backdrop-blur-xl py-3 md:py-4 shadow-sm" : "bg-transparent py-5 md:py-8"
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <button 
           className="p-2 hover:bg-black/5 transition-colors relative z-[60]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
         </button>
 
         <Link href="/" className={cn(
-          "text-xl md:text-3xl font-headline tracking-tighter flex items-center gap-2 transition-all duration-700 absolute left-1/2 -translate-x-1/2",
+          "text-lg md:text-3xl font-headline tracking-tighter flex items-center gap-1 md:gap-2 transition-all duration-700 absolute left-1/2 -translate-x-1/2",
           showLogo ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
         )}>
-          <span className="font-bold">Palmira</span>
+          <span className="font-bold text-primary">Palmira</span>
           <span className="italic font-normal text-accent">Garde</span>
         </Link>
         
@@ -55,7 +55,7 @@ export function Header() {
           <a 
             href="https://wa.me/qr/4JSUW45MSRMZM1" 
             target="_blank"
-            className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] bg-primary text-primary-foreground px-4 py-2.5 md:px-5 md:py-3 hover:bg-accent transition-all"
+            className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] bg-primary text-primary-foreground px-3 py-2 md:px-5 md:py-3 hover:bg-accent transition-all"
           >
             Consulta VIP
           </a>
@@ -67,18 +67,20 @@ export function Header() {
         "fixed inset-0 bg-white z-50 transition-all duration-500 ease-in-out flex flex-col items-center justify-center gap-6",
         isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       )}>
-        <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-3xl font-headline font-bold mb-8">
+        <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-4xl font-headline font-bold mb-8">
           Palmira <span className="italic font-normal text-accent">Garde</span>
         </Link>
-        <Link href="/servicios" onClick={() => setIsMenuOpen(false)} className="text-xl font-headline italic hover-gold">Servicios Pro</Link>
-        <Link href="/#productos" onClick={() => setIsMenuOpen(false)} className="text-xl font-headline italic hover-gold">Nuestras Marcas</Link>
-        <Link href="/#sobre-mi" onClick={() => setIsMenuOpen(false)} className="text-xl font-headline italic hover-gold">El Ritual</Link>
-        <Link href="/#limelife-detalles" onClick={() => setIsMenuOpen(false)} className="text-xl font-headline italic hover-gold">Shop Online</Link>
+        <div className="flex flex-col items-center gap-6">
+          <Link href="/servicios" onClick={() => setIsMenuOpen(false)} className="text-xl md:text-2xl font-headline italic hover-gold">Servicios Pro</Link>
+          <Link href="/#productos" onClick={() => setIsMenuOpen(false)} className="text-xl md:text-2xl font-headline italic hover-gold">Nuestras Marcas</Link>
+          <Link href="/#sobre-mi" onClick={() => setIsMenuOpen(false)} className="text-xl md:text-2xl font-headline italic hover-gold">El Ritual</Link>
+          <Link href="/#limelife-detalles" onClick={() => setIsMenuOpen(false)} className="text-xl md:text-2xl font-headline italic hover-gold">Shop Online</Link>
+        </div>
         <div className="mt-12">
            <a 
             href="https://wa.me/qr/4JSUW45MSRMZM1" 
             target="_blank"
-            className="text-xs font-bold uppercase tracking-[0.3em] border-b-2 border-accent pb-2"
+            className="text-[10px] font-bold uppercase tracking-[0.3em] border-b-2 border-accent pb-2"
           >
             WhatsApp Directo
           </a>

@@ -15,7 +15,7 @@ export function Hero() {
             src={heroImg.imageUrl}
             alt="Palmira Garde Luxury Beauty"
             fill
-            className="object-cover opacity-70 scale-110"
+            className="object-cover opacity-70 scale-105 md:scale-110"
             priority
             data-ai-hint="luxury makeup detail"
           />
@@ -24,34 +24,34 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 text-center max-w-5xl px-6 animate-fade-up">
-        <span className="text-accent uppercase tracking-[0.5em] text-[10px] md:text-xs mb-6 block font-bold">The Art of Pure Beauty</span>
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-headline mb-8 text-white leading-[0.9] tracking-tighter">
+        <span className="text-accent uppercase tracking-[0.4em] md:tracking-[0.5em] text-[10px] md:text-xs mb-4 md:mb-6 block font-bold">The Art of Pure Beauty</span>
+        <h1 className="text-5xl md:text-8xl lg:text-9xl font-headline mb-6 md:mb-8 text-white leading-[0.9] tracking-tighter">
           Palmira <br />
           <span className="italic text-accent font-normal">Garde</span>
         </h1>
-        <p className="text-sm md:text-lg font-body text-white/60 mb-12 max-w-xl mx-auto leading-relaxed tracking-wide">
+        <p className="text-xs md:text-lg font-body text-white/60 mb-10 md:mb-12 max-w-md md:max-w-xl mx-auto leading-relaxed tracking-wide">
           Descubre el lujo consciente. Una selección de alta gama para quienes buscan resultados profesionales y frescura absoluta.
         </p>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
           <Button 
             size="lg" 
-            className="bg-white text-black hover:bg-accent hover:text-white px-12 h-14 text-[10px] tracking-[0.3em] uppercase font-bold rounded-none w-full sm:w-auto"
+            className="bg-white text-black hover:bg-accent hover:text-white px-8 md:px-12 h-12 md:h-14 text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-bold rounded-none w-full sm:w-auto"
             asChild
           >
             <a href="#productos">Explorar Catálogo</a>
           </Button>
           <a 
             href="#limelife-detalles" 
-            className="text-white text-[10px] tracking-[0.3em] uppercase font-bold border-b border-white/30 pb-2 hover:border-accent transition-all"
+            className="text-white text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-bold border-b border-white/30 pb-1.5 md:pb-2 hover:border-accent transition-all"
           >
             Tienda Oficial
           </a>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/40">
-        <ChevronDown className="h-6 w-6" />
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/40">
+        <ChevronDown className="h-5 w-5 md:h-6 md:w-6" />
       </div>
     </section>
   );
