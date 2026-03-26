@@ -49,8 +49,22 @@ const SERVICES = [
   }
 ];
 
-// Asumiendo que las imágenes en public/carrusel/ se llaman 1.jpg, 2.jpg... hasta 15.jpg
-const CAROUSEL_IMAGES = Array.from({ length: 15 }, (_, i) => `/carrusel/${i + 1}.jpg`);
+const CAROUSEL_IMAGES = [
+  "/carrusel/(1).JPEG",
+  "/carrusel/(1).JPG",
+  "/carrusel/(2).JPG",
+  "/carrusel/(3).JPG",
+  "/carrusel/(4).JPG",
+  "/carrusel/(5).JPG",
+  "/carrusel/(6).JPG",
+  "/carrusel/(7).JPG",
+  "/carrusel/(8).JPG",
+  "/carrusel/(9).JPG",
+  "/carrusel/(10).JPG",
+  "/carrusel/(11).JPG",
+  "/carrusel/(12).JPG",
+  "/carrusel/(13).jpg",
+];
 
 export function ProfessionalServices() {
   const whatsappUrl = "https://wa.me/qr/4JSUW45MSRMZM1";
@@ -81,7 +95,7 @@ export function ProfessionalServices() {
           </div>
           <div className="relative aspect-[4/5] overflow-hidden group order-1 md:order-2 shadow-2xl">
             <Image
-              src="/carrusel/1.jpg"
+              src="/carrusel/(1).JPG"
               alt="Maquillaje Profesional Destacado"
               fill
               className="object-cover transition-transform duration-[4s] group-hover:scale-110 opacity-90"
