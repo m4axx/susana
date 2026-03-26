@@ -26,38 +26,32 @@
     },
     {
       "id": "ll-novedades",
-      "description": "Nuevos lanzamientos de maquillaje",
-      "imageUrl": "https://picsum.photos/seed/makeup-new-palette/800/800",
+      "description": "Novedades de maquillaje LimeLife",
+      "imageUrl": "/Novedades.jpg",
       "imageHint": "makeup palette"
     },
     {
-      "id": "ll-sales",
-      "description": "Productos de maquillaje en oferta",
-      "imageUrl": "https://picsum.photos/seed/makeup-sale-gold/800/800",
-      "imageHint": "makeup luxury"
-    },
-    {
       "id": "ll-maquillaje",
-      "description": "Detalle de labios y pinceles",
-      "imageUrl": "https://picsum.photos/seed/makeup-lipstick-macro/800/800",
+      "description": "Categoría Maquillaje LimeLife",
+      "imageUrl": "/Maquillaje.jpg",
       "imageHint": "lipstick detail"
     },
     {
       "id": "ll-piel",
-      "description": "Preparación de la piel para maquillaje",
-      "imageUrl": "https://picsum.photos/seed/makeup-skin-prep/800/800",
+      "description": "Categoría Cuidado de la Piel LimeLife",
+      "imageUrl": "/Cuidado.jpg",
       "imageHint": "face serum"
     },
     {
       "id": "ll-cabello",
-      "description": "Estilismo para sesiones de maquillaje",
-      "imageUrl": "https://picsum.photos/seed/beauty-hair-model/800/800",
-      "imageHint": "beauty model"
+      "description": "Categoría Cabello LimeLife",
+      "imageUrl": "/Cabello.jpg",
+      "imageHint": "beauty hair"
     },
     {
       "id": "ll-colecciones",
-      "description": "Maletín de maquillaje profesional completo",
-      "imageUrl": "https://picsum.photos/seed/makeup-artist-kit/800/800",
+      "description": "Categoría Colecciones LimeLife",
+      "imageUrl": "/Colecciones.jpg",
       "imageHint": "makeup kit"
     },
     {
