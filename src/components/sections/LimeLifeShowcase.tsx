@@ -6,12 +6,12 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { ExternalLink } from "lucide-react";
 
 const CATEGORIES = [
-  { id: "ll-sales", title: "Birthday Sales", url: "https://www.limelife.com/PALMIRAGARDE/products/birthday-sales", hint: "luxury perfume" },
+  { id: "ll-sales", title: "Birthday Sales", url: "https://www.limelife.com/PALMIRAGARDE/products/birthday-sales", hint: "makeup sale" },
   { id: "ll-novedades", title: "Novedades", url: "https://www.limelife.com/PALMIRAGARDE/products/novedades", hint: "makeup palette" },
-  { id: "ll-maquillaje", title: "Maquillaje", url: "https://www.limelife.com/PALMIRAGARDE/products/maquillaje", hint: "lipstick detail" },
-  { id: "ll-piel", title: "Cuidado de la Piel", url: "https://www.limelife.com/PALMIRAGARDE/products/cuidado-de-la-piel", hint: "skin texture" },
-  { id: "ll-cabello", title: "Cabello", url: "https://www.limelife.com/corporphan/cms/c/1538", hint: "shiny hair" },
-  { id: "ll-colecciones", title: "Colecciones", url: "https://www.limelife.com/PALMIRAGARDE/products?categoryId=1615", hint: "beauty collection" },
+  { id: "ll-maquillaje", title: "Maquillaje", url: "https://www.limelife.com/PALMIRAGARDE/products/maquillaje", hint: "lipstick brush" },
+  { id: "ll-piel", title: "Cuidado de la Piel", url: "https://www.limelife.com/PALMIRAGARDE/products/cuidado-de-la-piel", hint: "skincare face" },
+  { id: "ll-cabello", title: "Cabello", url: "https://www.limelife.com/corporphan/cms/c/1538", hint: "beauty hair" },
+  { id: "ll-colecciones", title: "Colecciones", url: "https://www.limelife.com/PALMIRAGARDE/products?categoryId=1615", hint: "makeup kit" },
 ];
 
 export function LimeLifeShowcase() {
@@ -47,7 +47,7 @@ export function LimeLifeShowcase() {
                 href={cat.url} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative aspect-square overflow-hidden bg-black flex flex-col justify-end p-8 md:p-12"
+                className="group relative aspect-square overflow-hidden bg-black flex flex-col justify-end p-8 md:p-12 transition-all active:scale-[0.98]"
               >
                 <Image
                   src={img?.imageUrl || ""}
@@ -61,7 +61,7 @@ export function LimeLifeShowcase() {
                     {cat.title}
                   </h3>
                   <div className="h-px w-12 bg-accent group-hover:w-24 transition-all duration-500" />
-                  <span className="text-white/60 text-[10px] uppercase tracking-[0.3em] font-bold block pt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="text-white/60 text-[10px] uppercase tracking-[0.3em] font-bold block pt-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
                     Descubrir <ExternalLink className="inline h-3 w-3 ml-2" />
                   </span>
                 </div>

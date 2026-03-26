@@ -26,86 +26,86 @@
     },
     {
       "id": "ll-novedades",
-      "description": "New cosmetic releases",
-      "imageUrl": "https://picsum.photos/seed/palmira-new/800/800",
+      "description": "Nuevos lanzamientos de maquillaje",
+      "imageUrl": "https://picsum.photos/seed/makeup-new-palette/800/800",
       "imageHint": "makeup palette"
     },
     {
       "id": "ll-sales",
-      "description": "Elegant product presentation for sales",
-      "imageUrl": "https://picsum.photos/seed/palmira-sale/800/800",
-      "imageHint": "luxury cosmetic"
+      "description": "Productos de maquillaje en oferta",
+      "imageUrl": "https://picsum.photos/seed/makeup-sale-gold/800/800",
+      "imageHint": "makeup luxury"
     },
     {
       "id": "ll-maquillaje",
-      "description": "Fine detail of professional makeup",
-      "imageUrl": "https://picsum.photos/seed/palmira-makeup/800/800",
+      "description": "Detalle de labios y pinceles",
+      "imageUrl": "https://picsum.photos/seed/makeup-lipstick-macro/800/800",
       "imageHint": "lipstick detail"
     },
     {
       "id": "ll-piel",
-      "description": "Clean skin texture and cream",
-      "imageUrl": "https://picsum.photos/seed/palmira-skin/800/800",
-      "imageHint": "skin texture"
+      "description": "Preparación de la piel para maquillaje",
+      "imageUrl": "https://picsum.photos/seed/makeup-skin-prep/800/800",
+      "imageHint": "face serum"
     },
     {
       "id": "ll-cabello",
-      "description": "Luxurious hair care treatment",
-      "imageUrl": "https://picsum.photos/seed/palmira-hair/800/800",
-      "imageHint": "shiny hair"
+      "description": "Estilismo para sesiones de maquillaje",
+      "imageUrl": "https://picsum.photos/seed/beauty-hair-model/800/800",
+      "imageHint": "beauty model"
     },
     {
       "id": "ll-colecciones",
-      "description": "Complete premium beauty kit",
-      "imageUrl": "https://picsum.photos/seed/palmira-kit/800/800",
-      "imageHint": "beauty collection"
+      "description": "Maletín de maquillaje profesional completo",
+      "imageUrl": "https://picsum.photos/seed/makeup-artist-kit/800/800",
+      "imageHint": "makeup kit"
     },
     {
       "id": "post-1",
-      "description": "Morning beauty ritual",
+      "description": "Ritual de belleza matutino",
       "imageUrl": "https://picsum.photos/seed/blog-1/800/600",
       "imageHint": "beauty ritual"
     },
     {
       "id": "post-2",
-      "description": "The power of fresh ingredients",
+      "description": "Poder de ingredientes frescos",
       "imageUrl": "https://picsum.photos/seed/blog-2/800/600",
       "imageHint": "fresh herbs"
     },
     {
       "id": "promo-1",
-      "description": "Special beauty promotion",
+      "description": "Promoción especial de belleza",
       "imageUrl": "https://picsum.photos/seed/palmira-promo/1920/1080",
       "imageHint": "beauty spa"
     },
     {
       "id": "service-bridal",
-      "description": "Bridal makeup elegance",
-      "imageUrl": "https://picsum.photos/seed/bridal/800/1000",
+      "description": "Maquillaje de novia elegante",
+      "imageUrl": "https://picsum.photos/seed/bridal-makeup-look/800/1000",
       "imageHint": "bridal makeup"
     },
     {
       "id": "service-artistic",
-      "description": "Creative artistic makeup",
-      "imageUrl": "https://picsum.photos/seed/artistic/800/1000",
+      "description": "Maquillaje artístico creativo",
+      "imageUrl": "https://picsum.photos/seed/artistic-makeup-face/800/1000",
       "imageHint": "artistic makeup"
     },
     {
       "id": "portfolio-1",
-      "description": "Artistic look 1",
-      "imageUrl": "https://picsum.photos/seed/p1/800/1200",
+      "description": "Look artístico profesional 1",
+      "imageUrl": "https://picsum.photos/seed/p1-makeup/800/1200",
       "imageHint": "creative makeup"
     },
     {
       "id": "portfolio-2",
-      "description": "Artistic look 2",
-      "imageUrl": "https://picsum.photos/seed/p2/800/1200",
+      "description": "Look artístico profesional 2",
+      "imageUrl": "https://picsum.photos/seed/p2-glam-look/800/1200",
       "imageHint": "glam makeup"
     },
     {
       "id": "portfolio-3",
-      "description": "Artistic look 3",
-      "imageUrl": "https://picsum.photos/seed/p3/800/1200",
+      "description": "Look artístico profesional 3",
+      "imageUrl": "https://picsum.photos/seed/p3-editorial-face/800/1200",
       "imageHint": "editorial makeup"
     }
   ]
