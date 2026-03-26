@@ -26,38 +26,37 @@ export function Header() {
       "fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out px-4 md:px-12",
       isScrolled ? "bg-white/95 backdrop-blur-xl py-3 md:py-4 shadow-sm" : "bg-transparent py-5 md:py-8"
     )}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between relative">
-        {/* Left Side: Mobile Menu Button */}
-        <div className="flex-1 lg:flex-none">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Left Side: Mobile Menu Button and Desktop Nav */}
+        <div className="flex items-center gap-8">
           <button 
             className="p-2 hover:bg-black/5 transition-colors relative z-[60]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
+            {isMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6 text-primary" /> : <Menu className={cn("h-5 w-5 md:h-6 md:w-6", isScrolled ? "text-primary" : "text-white")} />}
           </button>
+          
+          <nav className="hidden lg:flex items-center gap-10">
+            <Link href="/servicios" className={cn("text-[10px] font-bold uppercase tracking-[0.3em] hover-gold", isScrolled ? "text-primary" : "text-white")}>Servicios</Link>
+            <Link href="/#productos" className={cn("text-[10px] font-bold uppercase tracking-[0.3em] hover-gold", isScrolled ? "text-primary" : "text-white")}>Marcas</Link>
+            <Link href="/#sobre-mi" className={cn("text-[10px] font-bold uppercase tracking-[0.3em] hover-gold", isScrolled ? "text-primary" : "text-white")}>El Ritual</Link>
+          </nav>
         </div>
 
-        {/* Center: Dynamic Logo */}
-        <Link href="/" className={cn(
-          "text-lg md:text-3xl font-headline tracking-tighter flex items-center gap-1 md:gap-2 transition-all duration-700 absolute left-1/2 -translate-x-1/2",
-          showLogo ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
-        )}>
-          <span className="font-bold text-primary">Palmira</span>
-          <span className="italic font-normal text-accent">Garde</span>
-        </Link>
-        
-        {/* Right Side: Desktop Nav and CTA */}
-        <div className="flex-1 flex items-center justify-end gap-6 md:gap-10">
-          <nav className="hidden lg:flex items-center gap-10 mr-4">
-            <Link href="/servicios" className="text-[10px] font-bold uppercase tracking-[0.3em] hover-gold">Servicios</Link>
-            <Link href="/#productos" className="text-[10px] font-bold uppercase tracking-[0.3em] hover-gold">Marcas</Link>
-            <Link href="/#sobre-mi" className="text-[10px] font-bold uppercase tracking-[0.3em] hover-gold">El Ritual</Link>
-          </nav>
+        {/* Right Side: Dynamic Logo and CTA */}
+        <div className="flex items-center gap-4 md:gap-8">
+          <Link href="/" className={cn(
+            "text-base md:text-2xl font-headline tracking-tighter flex items-center gap-1 md:gap-2 transition-all duration-700",
+            showLogo ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4 pointer-events-none"
+          )}>
+            <span className="font-bold text-primary">Palmira</span>
+            <span className="italic font-normal text-accent">Garde</span>
+          </Link>
           
           <a 
             href="https://wa.me/qr/4JSUW45MSRMZM1" 
             target="_blank"
-            className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] bg-primary text-primary-foreground px-3 py-2 md:px-5 md:py-3 hover:bg-accent transition-all"
+            className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] bg-primary text-primary-foreground px-3 py-2 md:px-5 md:py-3 hover:bg-accent transition-all whitespace-nowrap"
           >
             Consulta VIP
           </a>

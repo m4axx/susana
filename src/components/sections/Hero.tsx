@@ -24,19 +24,19 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 text-center max-w-5xl px-6 animate-fade-up">
-        <span className="text-accent uppercase tracking-[0.4em] md:tracking-[0.5em] text-[10px] md:text-xs mb-4 md:mb-6 block font-bold">The Art of Pure Beauty</span>
-        <h1 className="text-5xl md:text-8xl lg:text-9xl font-headline mb-6 md:mb-8 text-white leading-[0.9] tracking-tighter">
+        <span className="text-accent uppercase tracking-[0.4em] md:tracking-[0.5em] text-[10px] md:text-xs mb-6 md:mb-8 block font-bold">The Art of Pure Beauty</span>
+        <h1 className="text-5xl md:text-8xl lg:text-9xl font-headline mb-8 md:mb-12 text-white leading-[0.85] tracking-tighter">
           Palmira <br />
           <span className="italic text-accent font-normal">Garde</span>
         </h1>
-        <p className="text-xs md:text-lg font-body text-white/60 mb-10 md:mb-12 max-w-md md:max-w-xl mx-auto leading-relaxed tracking-wide">
+        <p className="text-sm md:text-lg font-body text-white/60 mb-10 md:mb-14 max-w-md md:max-w-xl mx-auto leading-relaxed tracking-wide px-4">
           Descubre el lujo consciente. Una selección de alta gama para quienes buscan resultados profesionales y frescura absoluta.
         </p>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8">
           <Button 
             size="lg" 
-            className="bg-white text-black hover:bg-accent hover:text-white px-8 md:px-12 h-12 md:h-14 text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-bold rounded-none w-full sm:w-auto"
+            className="bg-white text-black hover:bg-accent hover:text-white px-8 md:px-12 h-12 md:h-14 text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-bold rounded-none w-full sm:w-auto transition-all"
             asChild
           >
             <a href="#productos">Explorar Catálogo</a>
