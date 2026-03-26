@@ -4,13 +4,14 @@
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { ExternalLink } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const CATEGORIES = [
-  { id: "ll-novedades", title: "Novedades", url: "https://www.limelife.com/PALMIRAGARDE/products/novedades", hint: "makeup palette" },
-  { id: "ll-maquillaje", title: "Maquillaje", url: "https://www.limelife.com/PALMIRAGARDE/products/maquillaje", hint: "lipstick brush" },
-  { id: "ll-piel", title: "Cuidado de la Piel", url: "https://www.limelife.com/PALMIRAGARDE/products/cuidado-de-la-piel", hint: "skincare face" },
-  { id: "ll-cabello", title: "Cabello", url: "https://www.limelife.com/corporphan/cms/c/1538", hint: "beauty hair" },
-  { id: "ll-colecciones", title: "Colecciones", url: "https://www.limelife.com/PALMIRAGARDE/products?categoryId=1615", hint: "makeup kit" },
+  { id: "ll-novedades", title: "Novedades", url: "https://www.limelife.com/PALMIRAGARDE/products/novedades", hint: "makeup palette", span: "md:col-span-3" },
+  { id: "ll-maquillaje", title: "Maquillaje", url: "https://www.limelife.com/PALMIRAGARDE/products/maquillaje", hint: "lipstick brush", span: "md:col-span-3" },
+  { id: "ll-piel", title: "Cuidado de la Piel", url: "https://www.limelife.com/PALMIRAGARDE/products/cuidado-de-la-piel", hint: "skincare face", span: "md:col-span-2" },
+  { id: "ll-cabello", title: "Cabello", url: "https://www.limelife.com/corporphan/cms/c/1538", hint: "beauty hair", span: "md:col-span-2" },
+  { id: "ll-colecciones", title: "Colecciones", url: "https://www.limelife.com/PALMIRAGARDE/products?categoryId=1615", hint: "makeup kit", span: "md:col-span-2" },
 ];
 
 export function LimeLifeShowcase() {
@@ -37,7 +38,8 @@ export function LimeLifeShowcase() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 bg-white/5 border border-white/5">
+        {/* 5-Item Balanced Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-2 bg-white/5 p-2">
           {CATEGORIES.map((cat) => {
             const img = PlaceHolderImages.find((i) => i.id === cat.id);
             return (
@@ -46,17 +48,20 @@ export function LimeLifeShowcase() {
                 href={cat.url} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative aspect-square overflow-hidden bg-black flex flex-col justify-end p-8 md:p-12 transition-all active:scale-[0.98]"
+                className={cn(
+                  "group relative aspect-square md:aspect-auto md:h-[500px] overflow-hidden bg-black flex flex-col justify-end p-8 md:p-12 transition-all active:scale-[0.98]",
+                  cat.span
+                )}
               >
                 <Image
                   src={img?.imageUrl || ""}
                   alt={cat.title}
                   fill
-                  className="object-cover transition-transform duration-[2000ms] group-hover:scale-110 opacity-50 group-hover:opacity-30"
+                  className="object-cover transition-transform duration-[2000ms] group-hover:scale-105 opacity-60 group-hover:opacity-40"
                   data-ai-hint={cat.hint}
                 />
                 <div className="relative z-10 space-y-4">
-                  <h3 className="text-white font-headline text-3xl md:text-4xl italic">
+                  <h3 className="text-white font-headline text-3xl md:text-5xl italic leading-none">
                     {cat.title}
                   </h3>
                   <div className="h-px w-12 bg-accent group-hover:w-24 transition-all duration-500" />
