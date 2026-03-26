@@ -6,7 +6,6 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { ExternalLink } from "lucide-react";
 
 const CATEGORIES = [
-  { id: "ll-sales", title: "Birthday Sales", url: "https://www.limelife.com/PALMIRAGARDE/products/birthday-sales", hint: "makeup sale" },
   { id: "ll-novedades", title: "Novedades", url: "https://www.limelife.com/PALMIRAGARDE/products/novedades", hint: "makeup palette" },
   { id: "ll-maquillaje", title: "Maquillaje", url: "https://www.limelife.com/PALMIRAGARDE/products/maquillaje", hint: "lipstick brush" },
   { id: "ll-piel", title: "Cuidado de la Piel", url: "https://www.limelife.com/PALMIRAGARDE/products/cuidado-de-la-piel", hint: "skincare face" },
