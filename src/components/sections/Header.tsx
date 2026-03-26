@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X, ShoppingBag } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 
 export function Header() {
@@ -26,14 +26,18 @@ export function Header() {
       "fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out px-4 md:px-12",
       isScrolled ? "bg-white/95 backdrop-blur-xl py-3 md:py-4 shadow-sm" : "bg-transparent py-5 md:py-8"
     )}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <button 
-          className="p-2 hover:bg-black/5 transition-colors relative z-[60]"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
-        </button>
+      <div className="max-w-7xl mx-auto flex items-center justify-between relative">
+        {/* Left Side: Mobile Menu Button */}
+        <div className="flex-1 lg:flex-none">
+          <button 
+            className="p-2 hover:bg-black/5 transition-colors relative z-[60]"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
+          </button>
+        </div>
 
+        {/* Center: Dynamic Logo */}
         <Link href="/" className={cn(
           "text-lg md:text-3xl font-headline tracking-tighter flex items-center gap-1 md:gap-2 transition-all duration-700 absolute left-1/2 -translate-x-1/2",
           showLogo ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
@@ -42,16 +46,14 @@ export function Header() {
           <span className="italic font-normal text-accent">Garde</span>
         </Link>
         
-        <nav className="hidden lg:flex items-center gap-10">
-          <Link href="/servicios" className="text-[10px] font-bold uppercase tracking-[0.3em] hover-gold">Servicios</Link>
-          <Link href="/#productos" className="text-[10px] font-bold uppercase tracking-[0.3em] hover-gold">Marcas</Link>
-          <Link href="/#sobre-mi" className="text-[10px] font-bold uppercase tracking-[0.3em] hover-gold">El Ritual</Link>
-        </nav>
-
-        <div className="flex items-center gap-2 md:gap-4">
-          <button className="p-2 hover:bg-black/5 transition-colors hidden sm:block">
-            <ShoppingBag className="h-5 w-5" />
-          </button>
+        {/* Right Side: Desktop Nav and CTA */}
+        <div className="flex-1 flex items-center justify-end gap-6 md:gap-10">
+          <nav className="hidden lg:flex items-center gap-10 mr-4">
+            <Link href="/servicios" className="text-[10px] font-bold uppercase tracking-[0.3em] hover-gold">Servicios</Link>
+            <Link href="/#productos" className="text-[10px] font-bold uppercase tracking-[0.3em] hover-gold">Marcas</Link>
+            <Link href="/#sobre-mi" className="text-[10px] font-bold uppercase tracking-[0.3em] hover-gold">El Ritual</Link>
+          </nav>
+          
           <a 
             href="https://wa.me/qr/4JSUW45MSRMZM1" 
             target="_blank"
