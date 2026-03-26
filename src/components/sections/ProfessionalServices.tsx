@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { MessageSquare, Star, ArrowRight, Camera, Brush, Heart, Clock, CheckCircle2 } from "lucide-react";
+import { MessageSquare, Star, Clock, CheckCircle2, Heart, Brush, Camera } from "lucide-react";
 import { motion } from "framer-motion";
 
 const SERVICES = [
@@ -50,20 +50,20 @@ const SERVICES = [
 ];
 
 const CAROUSEL_IMAGES = [
-  "/(1).JPEG",
-  "/(1).JPG",
-  "/(2).JPG",
-  "/(3).JPG",
-  "/(4).JPG",
-  "/(5).JPG",
-  "/(6).JPG",
-  "/(7).JPG",
-  "/(8).JPG",
-  "/(9).JPG",
-  "/(10).JPG",
-  "/(11).JPG",
-  "/(12).JPG",
-  "/(13).jpg",
+  "/1.JPEG",
+  "/1.JPG",
+  "/2.JPG",
+  "/3.JPG",
+  "/4.JPG",
+  "/5.JPG",
+  "/6.JPG",
+  "/7.JPG",
+  "/8.JPG",
+  "/9.JPG",
+  "/10.JPG",
+  "/11.JPG",
+  "/12.JPG",
+  "/13.jpg",
 ];
 
 export function ProfessionalServices() {
@@ -96,7 +96,7 @@ export function ProfessionalServices() {
           <div className="relative aspect-[4/5] overflow-hidden group order-1 md:order-2 shadow-2xl">
             <Image
               src="/(1).JPG"
-              alt="Maquillaje Profesional Destacado"
+              alt="Maquillaje Profesional"
               fill
               className="object-cover transition-transform duration-[4s] group-hover:scale-110 opacity-90"
               priority
@@ -165,7 +165,7 @@ export function ProfessionalServices() {
           </div>
         </div>
 
-        {/* Infinite Portfolio Gallery */}
+        {/* Truly Infinite Portfolio Gallery */}
         <div className="space-y-16 md:space-y-24">
           <div className="text-center space-y-4">
             <span className="text-accent uppercase tracking-[0.5em] text-[10px] font-bold">The Portfolio</span>
@@ -173,29 +173,31 @@ export function ProfessionalServices() {
             <p className="text-white/30 text-sm md:text-xl font-light max-w-2xl mx-auto">Un viaje visual por mis creaciones más impactantes. Arte, color y precisión en cada detalle.</p>
           </div>
           
-          <div className="relative w-full">
+          <div className="relative w-full overflow-hidden">
+            {/* Gradients for smooth fade */}
             <div className="absolute inset-y-0 left-0 w-12 md:w-48 bg-gradient-to-r from-[#050505] to-transparent z-20 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-12 md:w-48 bg-gradient-to-l from-[#050505] to-transparent z-20 pointer-events-none" />
 
-            <div className="flex overflow-hidden">
+            <div className="flex">
               <motion.div 
-                className="flex gap-4 md:gap-12 py-8"
+                className="flex gap-4 md:gap-8 py-8"
                 animate={{
-                  x: [0, -2000],
+                  x: [0, "-50%"],
                 }}
                 transition={{
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 40,
+                    duration: 60,
                     ease: "linear",
                   },
                 }}
               >
-                {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((src, index) => (
+                {/* Double the array to ensure a seamless loop */}
+                {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((src, index) => (
                   <div 
                     key={`${src}-${index}`} 
-                    className="relative flex-shrink-0 w-[260px] md:w-[450px] aspect-[3/4] overflow-hidden group cursor-crosshair shadow-2xl bg-white/5"
+                    className="relative flex-shrink-0 w-[240px] md:w-[400px] aspect-[3/4] overflow-hidden group cursor-crosshair shadow-2xl bg-white/5"
                   >
                     <Image
                       src={src}
