@@ -2,9 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 
@@ -13,21 +11,18 @@ const TIPS = [
     id: 1,
     title: "El Doble Limpiado: El Secreto Profesional",
     excerpt: "Por qué la limpieza en dos pasos es innegociable para mantener una piel luminosa y libre de impurezas.",
-    imageId: "post-1",
     daysAgo: 0
   },
   {
     id: 2,
     title: "Vitamina C y Protección Solar",
     excerpt: "La sinergia perfecta para combatir el estrés oxidativo y prevenir el envejecimiento prematuro durante el día.",
-    imageId: "post-2",
     daysAgo: 1
   },
   {
     id: 3,
     title: "Hidratación vs Nutrición",
     excerpt: "Aprende a identificar qué necesita realmente tu barrera cutánea según la estación del año.",
-    imageId: "ll-piel",
     daysAgo: 2
   }
 ];
@@ -52,36 +47,31 @@ export function Publications() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-16">
           {TIPS.map((post) => {
-            const img = PlaceHolderImages.find((i) => i.id === post.imageId);
             const date = new Date();
             date.setDate(date.getDate() - post.daysAgo);
             
             return (
               <Card key={post.id} className="border-none rounded-none shadow-none bg-transparent group overflow-hidden">
-                <div className="relative aspect-[4/5] overflow-hidden mb-8 shadow-sm">
-                  {img?.imageUrl && (
-                    <Image
-                      src={img.imageUrl}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform duration-[1.5s] group-hover:scale-105"
-                      data-ai-hint={img.imageHint}
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
-                </div>
-                <CardContent className="p-0 space-y-4">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
-                    {format(date, "d 'de' MMMM, yyyy", { locale: es })}
+                <CardContent className="p-0 space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="h-px w-8 bg-accent" />
+                    <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
+                      {format(date, "d 'de' MMMM, yyyy", { locale: es })}
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-headline leading-snug group-hover:text-accent transition-colors duration-300">
-                    {post.title}
-                  </h3>
-                  <p className="text-muted-foreground font-light leading-relaxed text-sm">
-                    {post.excerpt}
-                  </p>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl md:text-3xl font-headline leading-snug group-hover:text-accent transition-colors duration-500">
+                      {post.title}
+                    </h3>
+                    <p className="text-muted-foreground font-light leading-relaxed text-base">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                  <div className="pt-4 border-t border-muted opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-primary">Próximamente...</span>
+                  </div>
                 </CardContent>
               </Card>
             );
