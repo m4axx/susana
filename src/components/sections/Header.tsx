@@ -15,7 +15,7 @@ export function Header() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 20);
-      setShowLogo(scrollY > 350);
+      setShowLogo(scrollY > 300);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -24,7 +24,7 @@ export function Header() {
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out px-4 md:px-12",
-      isScrolled ? "bg-white/95 backdrop-blur-xl py-3 md:py-4 shadow-sm" : "bg-transparent py-5 md:py-8"
+      isScrolled ? "bg-white/95 backdrop-blur-xl py-3 md:py-4 shadow-sm border-b border-muted" : "bg-transparent py-5 md:py-8"
     )}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Left Side: Mobile Menu Button and Desktop Nav */}
@@ -43,11 +43,11 @@ export function Header() {
           </nav>
         </div>
 
-        {/* Right Side: Dynamic Logo and CTA */}
-        <div className="flex items-center gap-4 md:gap-8">
+        {/* Right Side: Logo and CTA always together to avoid overlap */}
+        <div className="flex items-center gap-4 md:gap-12">
           <Link href="/" className={cn(
             "text-base md:text-2xl font-headline tracking-tighter flex items-center gap-1 md:gap-2 transition-all duration-700",
-            showLogo ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4 pointer-events-none"
+            showLogo ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 pointer-events-none"
           )}>
             <span className="font-bold text-primary">Palmira</span>
             <span className="italic font-normal text-accent">Garde</span>
@@ -56,7 +56,7 @@ export function Header() {
           <a 
             href="https://wa.me/qr/4JSUW45MSRMZM1" 
             target="_blank"
-            className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] bg-primary text-primary-foreground px-3 py-2 md:px-5 md:py-3 hover:bg-accent transition-all whitespace-nowrap"
+            className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] bg-primary text-primary-foreground px-3 py-2 md:px-6 md:py-3.5 hover:bg-accent transition-all whitespace-nowrap"
           >
             Consulta VIP
           </a>
@@ -65,23 +65,23 @@ export function Header() {
 
       {/* Mobile Overlay Menu */}
       <div className={cn(
-        "fixed inset-0 bg-white z-50 transition-all duration-500 ease-in-out flex flex-col items-center justify-center gap-6",
-        isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        "fixed inset-0 bg-white z-[55] transition-all duration-500 ease-in-out flex flex-col items-center justify-center gap-6",
+        isMenuOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-full"
       )}>
-        <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-4xl font-headline font-bold mb-8">
+        <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-3xl md:text-5xl font-headline font-bold mb-8">
           Palmira <span className="italic font-normal text-accent">Garde</span>
         </Link>
-        <div className="flex flex-col items-center gap-6">
-          <Link href="/servicios" onClick={() => setIsMenuOpen(false)} className="text-xl md:text-2xl font-headline italic hover-gold">Servicios Pro</Link>
-          <Link href="/#productos" onClick={() => setIsMenuOpen(false)} className="text-xl md:text-2xl font-headline italic hover-gold">Nuestras Marcas</Link>
-          <Link href="/#sobre-mi" onClick={() => setIsMenuOpen(false)} className="text-xl md:text-2xl font-headline italic hover-gold">El Ritual</Link>
-          <Link href="/#limelife-detalles" onClick={() => setIsMenuOpen(false)} className="text-xl md:text-2xl font-headline italic hover-gold">Shop Online</Link>
+        <div className="flex flex-col items-center gap-8">
+          <Link href="/servicios" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic hover-gold">Servicios Pro</Link>
+          <Link href="/#productos" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic hover-gold">Nuestras Marcas</Link>
+          <Link href="/#sobre-mi" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic hover-gold">El Ritual</Link>
+          <Link href="/#limelife-detalles" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic hover-gold">Shop Online</Link>
         </div>
-        <div className="mt-12">
+        <div className="mt-16">
            <a 
             href="https://wa.me/qr/4JSUW45MSRMZM1" 
             target="_blank"
-            className="text-[10px] font-bold uppercase tracking-[0.3em] border-b-2 border-accent pb-2"
+            className="text-[10px] font-bold uppercase tracking-[0.4em] border-b-2 border-accent pb-2"
           >
             WhatsApp Directo
           </a>

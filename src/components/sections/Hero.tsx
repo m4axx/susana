@@ -1,4 +1,6 @@
 
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -15,43 +17,44 @@ export function Hero() {
             src={heroImg.imageUrl}
             alt="Palmira Garde Luxury Beauty"
             fill
-            className="object-cover opacity-70 scale-105 md:scale-110"
+            className="object-cover opacity-60 scale-105 md:scale-110"
             priority
             data-ai-hint="luxury makeup detail"
+            unoptimized
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
       </div>
 
-      <div className="relative z-10 text-center max-w-5xl px-6 animate-fade-up">
-        <span className="text-accent uppercase tracking-[0.4em] md:tracking-[0.5em] text-[10px] md:text-xs mb-6 md:mb-8 block font-bold">The Art of Pure Beauty</span>
-        <h1 className="text-5xl md:text-8xl lg:text-9xl font-headline mb-8 md:mb-12 text-white leading-[0.85] tracking-tighter">
+      <div className="relative z-10 text-center max-w-5xl px-6 animate-fade-up flex flex-col items-center">
+        <span className="text-accent uppercase tracking-[0.4em] md:tracking-[0.6em] text-[10px] md:text-xs mb-8 md:mb-12 block font-bold">The Art of Pure Beauty</span>
+        <h1 className="text-5xl md:text-8xl lg:text-9xl font-headline mb-10 md:mb-16 text-white leading-[0.85] tracking-tighter">
           Palmira <br />
           <span className="italic text-accent font-normal">Garde</span>
         </h1>
-        <p className="text-sm md:text-lg font-body text-white/60 mb-10 md:mb-14 max-w-md md:max-w-xl mx-auto leading-relaxed tracking-wide px-4">
+        <p className="text-xs md:text-lg font-body text-white/70 mb-12 md:mb-20 max-w-xs md:max-w-2xl mx-auto leading-relaxed tracking-[0.1em] px-4">
           Descubre el lujo consciente. Una selección de alta gama para quienes buscan resultados profesionales y frescura absoluta.
         </p>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-12">
           <Button 
             size="lg" 
-            className="bg-white text-black hover:bg-accent hover:text-white px-8 md:px-12 h-12 md:h-14 text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-bold rounded-none w-full sm:w-auto transition-all"
+            className="bg-white text-black hover:bg-accent hover:text-white px-10 md:px-14 h-14 md:h-16 text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-bold rounded-none w-full sm:w-auto transition-all shadow-2xl"
             asChild
           >
             <a href="#productos">Explorar Catálogo</a>
           </Button>
           <a 
             href="#limelife-detalles" 
-            className="text-white text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-bold border-b border-white/30 pb-1.5 md:pb-2 hover:border-accent transition-all"
+            className="text-white text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-bold border-b-2 border-white/20 pb-2 hover:border-accent transition-all"
           >
             Tienda Oficial
           </a>
         </div>
       </div>
 
-      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/40">
-        <ChevronDown className="h-5 w-5 md:h-6 md:w-6" />
+      <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 animate-bounce text-white/30">
+        <ChevronDown className="h-6 w-6 md:h-8 md:w-8" />
       </div>
     </section>
   );

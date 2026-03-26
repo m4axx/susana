@@ -38,8 +38,8 @@ export function LimeLifeShowcase() {
           </p>
         </div>
 
-        {/* 5-Item Balanced Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-2 bg-white/5 p-2">
+        {/* 5-Item Grid: 2 on top (3 cols each), 3 on bottom (2 cols each) */}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-2 bg-white/5 p-2 border border-white/10">
           {CATEGORIES.map((cat) => {
             const img = PlaceHolderImages.find((i) => i.id === cat.id);
             return (
@@ -49,16 +49,17 @@ export function LimeLifeShowcase() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={cn(
-                  "group relative aspect-square md:aspect-auto md:h-[500px] overflow-hidden bg-black flex flex-col justify-end p-8 md:p-12 transition-all active:scale-[0.98]",
+                  "group relative aspect-square md:aspect-[4/5] overflow-hidden bg-black flex flex-col justify-end p-8 md:p-12 transition-all active:scale-[0.98] border border-white/5",
                   cat.span
                 )}
               >
                 <Image
-                  src={img?.imageUrl || ""}
+                  src={img?.imageUrl || "https://picsum.photos/seed/fallback/800/1000"}
                   alt={cat.title}
                   fill
-                  className="object-cover transition-transform duration-[2000ms] group-hover:scale-105 opacity-60 group-hover:opacity-40"
+                  className="object-cover transition-transform duration-[2000ms] group-hover:scale-105 opacity-70 group-hover:opacity-50"
                   data-ai-hint={cat.hint}
+                  unoptimized // Recomendado si las imágenes locales no se cargan bien en dev
                 />
                 <div className="relative z-10 space-y-4">
                   <h3 className="text-white font-headline text-3xl md:text-5xl italic leading-none">

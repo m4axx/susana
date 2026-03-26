@@ -13,18 +13,6 @@
       "imageHint": "palmira garde portrait"
     },
     {
-      "id": "limelife-card",
-      "description": "Professional LimeLife tools and products",
-      "imageUrl": "https://picsum.photos/seed/palmira-ll-pro/1000/1200",
-      "imageHint": "makeup professional"
-    },
-    {
-      "id": "ringana-card",
-      "description": "Fresh herbal skincare close-up",
-      "imageUrl": "https://picsum.photos/seed/palmira-ringana-fresh/1000/1200",
-      "imageHint": "herbal skincare"
-    },
-    {
       "id": "ll-novedades",
       "description": "Novedades de maquillaje LimeLife",
       "imageUrl": "/Novedades.jpg",
