@@ -50,20 +50,20 @@ const SERVICES = [
 ];
 
 const CAROUSEL_IMAGES = [
-  "/carrusel/(1).JPEG",
-  "/carrusel/(1).JPG",
-  "/carrusel/(2).JPG",
-  "/carrusel/(3).JPG",
-  "/carrusel/(4).JPG",
-  "/carrusel/(5).JPG",
-  "/carrusel/(6).JPG",
-  "/carrusel/(7).JPG",
-  "/carrusel/(8).JPG",
-  "/carrusel/(9).JPG",
-  "/carrusel/(10).JPG",
-  "/carrusel/(11).JPG",
-  "/carrusel/(12).JPG",
-  "/carrusel/(13).jpg",
+  "/(1).JPEG",
+  "/(1).JPG",
+  "/(2).JPG",
+  "/(3).JPG",
+  "/(4).JPG",
+  "/(5).JPG",
+  "/(6).JPG",
+  "/(7).JPG",
+  "/(8).JPG",
+  "/(9).JPG",
+  "/(10).JPG",
+  "/(11).JPG",
+  "/(12).JPG",
+  "/(13).jpg",
 ];
 
 export function ProfessionalServices() {
@@ -95,7 +95,7 @@ export function ProfessionalServices() {
           </div>
           <div className="relative aspect-[4/5] overflow-hidden group order-1 md:order-2 shadow-2xl">
             <Image
-              src="/carrusel/(1).JPG"
+              src="/(1).JPG"
               alt="Maquillaje Profesional Destacado"
               fill
               className="object-cover transition-transform duration-[4s] group-hover:scale-110 opacity-90"
@@ -174,7 +174,6 @@ export function ProfessionalServices() {
           </div>
           
           <div className="relative w-full">
-            {/* Gradient Overlays for smooth edges */}
             <div className="absolute inset-y-0 left-0 w-20 md:w-48 bg-gradient-to-r from-[#050505] to-transparent z-20 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-20 md:w-48 bg-gradient-to-l from-[#050505] to-transparent z-20 pointer-events-none" />
 
@@ -193,7 +192,6 @@ export function ProfessionalServices() {
                   },
                 }}
               >
-                {/* Triplicamos las imágenes para asegurar un loop infinito sin saltos visuales en pantallas grandes */}
                 {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((src, index) => (
                   <div 
                     key={index} 
