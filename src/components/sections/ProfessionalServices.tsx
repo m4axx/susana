@@ -4,7 +4,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { MessageSquare, Star, ArrowRight, Camera, Brush, Heart } from "lucide-react";
+import { MessageSquare, Star, ArrowRight, Camera, Brush, Heart, Clock, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 const SERVICES = [
@@ -12,7 +12,10 @@ const SERVICES = [
     id: "social",
     title: "Eventos & Social",
     description: "Realza tu belleza natural con un look sofisticado para cualquier ocasión especial.",
-    price: "Desde 60€",
+    includes: "Preparación de piel + Pestañas postizas",
+    duration: "60 min",
+    modality: "Presencial",
+    price: "Desde 75€",
     icon: <Star className="h-5 w-5 text-accent" />,
     imageId: "ll-maquillaje"
   },
@@ -20,23 +23,32 @@ const SERVICES = [
     id: "bridal",
     title: "Novias Elite",
     description: "Un servicio exclusivo y personalizado para que brilles con luz propia en tu gran día.",
-    price: "Consultar",
+    includes: "Prueba previa + Kit de retoque VIP",
+    duration: "Variable",
+    modality: "A domicilio / Presencial",
+    price: "Desde 150€",
     icon: <Heart className="h-5 w-5 text-accent" />,
     imageId: "service-bridal"
   },
   {
     id: "artistic",
-    title: "Editorial & Artístico",
+    title: "Maquillaje Artístico",
     description: "Creatividad sin límites para sesiones de fotos, moda y proyectos conceptuales.",
-    price: "Desde 90€",
+    includes: "Diseño personalizado + Caracterización",
+    duration: "90 - 120 min",
+    modality: "Estudio / Exterior",
+    price: "Desde 100€",
     icon: <Brush className="h-5 w-5 text-accent" />,
     imageId: "service-artistic"
   },
   {
     id: "workshop",
-    title: "Clases Automaquillaje",
-    description: "Sesiones VIP donde aprenderás las técnicas profesionales para tu rostro.",
-    price: "Desde 50€",
+    title: "Clases de Automaquillaje",
+    description: "Sesiones VIP donde aprenderás las técnicas profesionales adaptadas a tu rostro.",
+    includes: "Asesoría de productos + Guía de pasos",
+    duration: "2h aprox.",
+    modality: "Individual / Grupo / Online",
+    price: "Precio variable",
     icon: <Camera className="h-5 w-5 text-accent" />,
     imageId: "ll-colecciones"
   }
@@ -65,7 +77,7 @@ export function ProfessionalServices() {
               <h2 className="text-4xl md:text-8xl font-headline leading-[1.1]">Arte en el <br /><span className="italic font-normal">Rostro.</span></h2>
             </div>
             <p className="text-white/40 text-base md:text-xl font-light leading-relaxed max-w-lg">
-              Como maquilladora profesional, mi misión es fusionar la técnica de alta definición con una visión artística única. Cada trazo es una declaración de estilo.
+              Como maquilladora profesional, mi misión es fusionar la técnica de alta definición con una visión artística única. Cada trazo es una declaración de estilo y frescura.
             </p>
           </div>
           <div className="relative aspect-square md:aspect-[4/5] overflow-hidden group order-1 md:order-2">
@@ -74,6 +86,7 @@ export function ProfessionalServices() {
               alt="Maquillaje Profesional"
               fill
               className="object-cover transition-transform duration-[3s] group-hover:scale-110 opacity-80"
+              unoptimized
             />
             <div className="absolute inset-0 border border-white/20 m-4 md:m-6" />
           </div>
@@ -82,14 +95,14 @@ export function ProfessionalServices() {
         {/* Services Grid */}
         <div className="space-y-12 md:space-y-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8 md:pb-12">
-            <h3 className="text-3xl md:text-5xl font-headline italic">Mis Servicios</h3>
-            <p className="text-white/40 text-[10px] md:text-xs tracking-widest uppercase">Elegancia adaptada a cada ocasión</p>
+            <h3 className="text-3xl md:text-5xl font-headline italic">Tarifas & Servicios</h3>
+            <p className="text-white/40 text-[10px] md:text-xs tracking-widest uppercase">Excelencia y flexibilidad profesional</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {SERVICES.map((service) => (
-              <div key={service.id} className="group bg-white/5 p-6 md:p-8 border border-white/5 hover:border-accent/30 transition-all duration-500 flex flex-col justify-between min-h-[350px] md:min-h-[400px]">
-                <div className="space-y-4 md:space-y-6">
+              <div key={service.id} className="group bg-white/5 p-6 md:p-8 border border-white/5 hover:border-accent/30 transition-all duration-500 flex flex-col justify-between min-h-[450px]">
+                <div className="space-y-6">
                   <div className="p-2.5 bg-accent/10 w-fit">
                     {service.icon}
                   </div>
@@ -97,9 +110,24 @@ export function ProfessionalServices() {
                   <p className="text-white/40 text-xs md:text-sm font-light leading-relaxed">
                     {service.description}
                   </p>
+                  
+                  <div className="space-y-3 pt-4 border-t border-white/5">
+                    <div className="flex items-start gap-2 text-[10px] text-white/60">
+                      <CheckCircle2 className="h-3 w-3 text-accent shrink-0 mt-0.5" />
+                      <span>{service.includes}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[10px] text-white/60">
+                      <Clock className="h-3 w-3 text-accent shrink-0" />
+                      <span>{service.duration}</span>
+                    </div>
+                    <div className="text-[9px] uppercase tracking-tighter text-accent/80 font-medium">
+                      {service.modality}
+                    </div>
+                  </div>
                 </div>
-                <div className="pt-6 md:pt-8 space-y-4 md:space-y-6">
-                  <div className="text-accent font-bold tracking-[0.2em] text-[9px] md:text-[10px] uppercase">
+                
+                <div className="pt-8 space-y-6">
+                  <div className="text-accent font-bold tracking-[0.2em] text-lg uppercase">
                     {service.price}
                   </div>
                   <Button 
@@ -107,7 +135,7 @@ export function ProfessionalServices() {
                     className="p-0 text-white hover:text-accent h-auto text-[9px] md:text-[10px] tracking-[0.3em] uppercase font-bold"
                     asChild
                   >
-                    <a href={whatsappUrl} target="_blank">Reservar <ArrowRight className="ml-2 h-3 w-3" /></a>
+                    <a href={whatsappUrl} target="_blank">Reservar Ahora <ArrowRight className="ml-2 h-3 w-3" /></a>
                   </Button>
                 </div>
               </div>
@@ -130,6 +158,7 @@ export function ProfessionalServices() {
                   alt={item.category}
                   fill
                   className="object-cover transition-transform duration-[2s] group-hover:scale-110"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-black/40 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4 md:p-6">
                   <span className="text-[10px] tracking-[0.3em] uppercase font-bold border-b border-accent pb-1">
@@ -150,7 +179,7 @@ export function ProfessionalServices() {
             <div className="space-y-6 md:space-y-8">
               <h3 className="text-2xl md:text-5xl font-headline italic leading-tight">¿Lista para tu transformación?</h3>
               <p className="text-white/40 max-w-md mx-auto font-light text-sm md:text-base">
-                Consultas personalizadas para eventos, bodas y proyectos artísticos. Plazas limitadas por temporada.
+                Consultas personalizadas para eventos, bodas y proyectos artísticos. Plazas limitadas por temporada para garantizar la máxima exclusividad.
               </p>
               <Button 
                 size="lg"
