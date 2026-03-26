@@ -28,11 +28,11 @@ export function Hero() {
 
       <div className="relative z-10 text-center max-w-5xl px-6 animate-fade-up flex flex-col items-center">
         <span className="text-accent uppercase tracking-[0.4em] md:tracking-[0.6em] text-[10px] md:text-xs mb-8 md:mb-12 block font-bold">The Art of Pure Beauty</span>
-        <h1 className="text-5xl md:text-8xl lg:text-9xl font-headline mb-10 md:mb-16 text-white leading-[0.85] tracking-tighter">
+        <h1 className="text-4xl md:text-8xl lg:text-9xl font-headline mb-10 md:mb-16 text-white leading-[0.85] tracking-tighter">
           Palmira <br />
           <span className="italic text-accent font-normal">Garde</span>
         </h1>
-        <p className="text-xs md:text-lg font-body text-white/70 mb-12 md:mb-20 max-w-xs md:max-w-2xl mx-auto leading-relaxed tracking-[0.1em] px-4">
+        <p className="text-[10px] md:text-lg font-body text-white/70 mb-12 md:mb-20 max-w-xs md:max-w-2xl mx-auto leading-relaxed tracking-[0.1em] px-4">
           Descubre el lujo consciente. Una selección de alta gama para quienes buscan resultados profesionales y frescura absoluta.
         </p>
         

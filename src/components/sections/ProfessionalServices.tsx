@@ -78,15 +78,15 @@ export function ProfessionalServices() {
           <div className="space-y-8 md:space-y-12 order-2 md:order-1 text-center md:text-left">
             <div className="space-y-4">
               <span className="text-accent uppercase tracking-[0.6em] text-[10px] font-bold block">Master Artistry</span>
-              <h2 className="text-5xl md:text-9xl font-headline leading-[0.9] tracking-tighter">Arte en el <br /><span className="italic font-normal text-accent">Rostro.</span></h2>
+              <h2 className="text-4xl md:text-9xl font-headline leading-[0.9] tracking-tighter">Arte en el <br /><span className="italic font-normal text-accent">Rostro.</span></h2>
             </div>
-            <p className="text-white/40 text-lg md:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
+            <p className="text-white/40 text-base md:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
               Como maquilladora profesional, mi misión es fusionar la técnica de alta definición con una visión artística única. Cada trazo es una declaración de estilo, sofisticación y frescura absoluta.
             </p>
             <div className="pt-4">
                <Button 
                 size="lg"
-                className="bg-white text-black hover:bg-accent hover:text-white rounded-none h-16 px-12 text-[10px] tracking-[0.4em] uppercase font-bold transition-all"
+                className="bg-white text-black hover:bg-accent hover:text-white rounded-none h-16 px-12 text-[10px] tracking-[0.4em] uppercase font-bold transition-all w-full sm:w-auto"
                 asChild
               >
                 <a href={whatsappUrl} target="_blank">Consultar Agenda</a>
@@ -103,23 +103,23 @@ export function ProfessionalServices() {
               unoptimized
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <div className="absolute inset-0 border-[20px] border-white/5 m-6 pointer-events-none" />
+            <div className="absolute inset-0 border-[10px] md:border-[20px] border-white/5 m-4 md:m-6 pointer-events-none" />
           </div>
         </div>
 
         {/* Services Grid */}
-        <div className="space-y-16 md:space-y-24">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-12">
+        <div className="space-y-12 md:space-y-24">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-8 md:pb-12">
             <div className="space-y-4">
               <span className="text-accent uppercase tracking-[0.4em] text-[10px] font-bold">The Offerings</span>
-              <h3 className="text-4xl md:text-6xl font-headline italic">Tarifas & Servicios</h3>
+              <h3 className="text-3xl md:text-6xl font-headline italic">Tarifas & Servicios</h3>
             </div>
             <p className="text-white/40 text-[10px] md:text-sm tracking-[0.3em] uppercase max-w-xs md:text-right">Excelencia técnica para resultados de alfombra roja</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
             {SERVICES.map((service) => (
-              <div key={service.id} className="group bg-white/[0.03] p-8 md:p-10 border border-white/5 hover:border-accent/40 transition-all duration-700 flex flex-col justify-between min-h-[500px] hover:bg-white/[0.05] relative overflow-hidden">
+              <div key={service.id} className="group bg-white/[0.03] p-8 md:p-10 border border-white/5 hover:border-accent/40 transition-all duration-700 flex flex-col justify-between min-h-[auto] md:min-h-[550px] hover:bg-white/[0.05] relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 blur-3xl -mr-16 -mt-16 group-hover:bg-accent/10 transition-colors" />
                 
                 <div className="space-y-8 relative z-10">
@@ -174,28 +174,28 @@ export function ProfessionalServices() {
           </div>
           
           <div className="relative w-full">
-            <div className="absolute inset-y-0 left-0 w-20 md:w-48 bg-gradient-to-r from-[#050505] to-transparent z-20 pointer-events-none" />
-            <div className="absolute inset-y-0 right-0 w-20 md:w-48 bg-gradient-to-l from-[#050505] to-transparent z-20 pointer-events-none" />
+            <div className="absolute inset-y-0 left-0 w-12 md:w-48 bg-gradient-to-r from-[#050505] to-transparent z-20 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-12 md:w-48 bg-gradient-to-l from-[#050505] to-transparent z-20 pointer-events-none" />
 
             <div className="flex overflow-hidden">
               <motion.div 
                 className="flex gap-4 md:gap-12 py-8"
                 animate={{
-                  x: [0, -100 * CAROUSEL_IMAGES.length],
+                  x: [0, -2000],
                 }}
                 transition={{
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 60,
+                    duration: 40,
                     ease: "linear",
                   },
                 }}
               >
                 {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((src, index) => (
                   <div 
-                    key={index} 
-                    className="relative flex-shrink-0 w-[300px] md:w-[500px] aspect-[3/4] overflow-hidden group cursor-crosshair shadow-2xl"
+                    key={`${src}-${index}`} 
+                    className="relative flex-shrink-0 w-[260px] md:w-[450px] aspect-[3/4] overflow-hidden group cursor-crosshair shadow-2xl bg-white/5"
                   >
                     <Image
                       src={src}
