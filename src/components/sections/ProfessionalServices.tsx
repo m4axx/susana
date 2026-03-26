@@ -1,10 +1,12 @@
 
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { MessageSquare, Star, Clock, CheckCircle2, Heart, Brush, Camera } from "lucide-react";
-import { motion } from "framer-motion";
+import { MessageSquare, Star, Clock, CheckCircle2, Heart, Brush, Camera, X, Maximize2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const SERVICES = [
   {
@@ -67,6 +69,7 @@ const CAROUSEL_IMAGES = [
 ];
 
 export function ProfessionalServices() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const whatsappUrl = "https://wa.me/qr/4JSUW45MSRMZM1";
 
   return (
@@ -78,7 +81,7 @@ export function ProfessionalServices() {
           <div className="space-y-8 md:space-y-12 order-2 md:order-1 text-center md:text-left">
             <div className="space-y-4">
               <span className="text-accent uppercase tracking-[0.6em] text-[10px] font-bold block">Master Artistry</span>
-              <h2 className="text-4xl md:text-9xl font-headline leading-[0.9] tracking-tighter">Arte en el <br /><span className="italic font-normal text-accent">Rostro.</span></h2>
+              <h2 className="text-4xl md:text-8xl lg:text-9xl font-headline leading-[0.9] tracking-tighter">Arte en el <br /><span className="italic font-normal text-accent">Rostro.</span></h2>
             </div>
             <p className="text-white/40 text-base md:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
               Como maquilladora profesional, mi misión es fusionar la técnica de alta definición con una visión artística única. Cada trazo es una declaración de estilo, sofisticación y frescura absoluta.
@@ -119,7 +122,7 @@ export function ProfessionalServices() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
             {SERVICES.map((service) => (
-              <div key={service.id} className="group bg-white/[0.03] p-8 md:p-10 border border-white/5 hover:border-accent/40 transition-all duration-700 flex flex-col justify-between min-h-[auto] md:min-h-[550px] hover:bg-white/[0.05] relative overflow-hidden">
+              <div key={service.id} className="group bg-white/[0.03] p-8 md:p-10 border border-white/5 hover:border-accent/40 transition-all duration-700 flex flex-col justify-between min-h-full hover:bg-white/[0.05] relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 blur-3xl -mr-16 -mt-16 group-hover:bg-accent/10 transition-colors" />
                 
                 <div className="space-y-8 relative z-10">
@@ -165,7 +168,7 @@ export function ProfessionalServices() {
           </div>
         </div>
 
-        {/* Truly Infinite Portfolio Gallery */}
+        {/* Portfolio Gallery */}
         <div className="space-y-16 md:space-y-24">
           <div className="text-center space-y-4">
             <span className="text-accent uppercase tracking-[0.5em] text-[10px] font-bold">The Portfolio</span>
@@ -174,7 +177,6 @@ export function ProfessionalServices() {
           </div>
           
           <div className="relative w-full overflow-hidden">
-            {/* Gradients for smooth fade */}
             <div className="absolute inset-y-0 left-0 w-12 md:w-48 bg-gradient-to-r from-[#050505] to-transparent z-20 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-12 md:w-48 bg-gradient-to-l from-[#050505] to-transparent z-20 pointer-events-none" />
 
@@ -188,16 +190,16 @@ export function ProfessionalServices() {
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 60,
+                    duration: 80,
                     ease: "linear",
                   },
                 }}
               >
-                {/* Double the array to ensure a seamless loop */}
                 {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((src, index) => (
-                  <div 
+                  <button
                     key={`${src}-${index}`} 
-                    className="relative flex-shrink-0 w-[240px] md:w-[400px] aspect-[3/4] overflow-hidden group cursor-crosshair shadow-2xl bg-white/5"
+                    onClick={() => setSelectedImage(src)}
+                    className="relative flex-shrink-0 w-[240px] md:w-[400px] aspect-[3/4] overflow-hidden group cursor-pointer shadow-2xl bg-white/5 border-none outline-none focus:ring-2 focus:ring-accent"
                   >
                     <Image
                       src={src}
@@ -206,15 +208,42 @@ export function ProfessionalServices() {
                       className="object-cover transition-transform duration-[2s] group-hover:scale-110"
                       unoptimized
                     />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
-                       <span className="text-[10px] tracking-[0.5em] uppercase font-bold border border-white/40 px-8 py-4 backdrop-blur-md">View Artistry</span>
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col items-center justify-center gap-4">
+                       <Maximize2 className="h-8 w-8 text-accent animate-pulse" />
+                       <span className="text-[10px] tracking-[0.5em] uppercase font-bold border border-white/40 px-6 py-3 backdrop-blur-md">View Artistry</span>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </motion.div>
             </div>
           </div>
         </div>
+
+        {/* Modal for viewing images */}
+        <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
+          <DialogContent className="max-w-[95vw] md:max-w-[90vw] lg:max-w-4xl p-0 bg-transparent border-none shadow-none flex items-center justify-center overflow-hidden">
+            <DialogTitle className="sr-only">Visualización de Obra Artística</DialogTitle>
+            <div className="relative w-full h-[80vh] flex items-center justify-center group">
+              {selectedImage && (
+                <div className="relative w-full h-full">
+                  <Image
+                    src={selectedImage}
+                    alt="Detalle de maquillaje profesional"
+                    fill
+                    className="object-contain"
+                    unoptimized
+                  />
+                </div>
+              )}
+              <button 
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/80 text-white transition-colors rounded-full z-[100]"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+          </DialogContent>
+        </Dialog>
 
         {/* Final Services CTA */}
         <div className="text-center pt-20">
@@ -225,7 +254,7 @@ export function ProfessionalServices() {
                </div>
             </div>
             <div className="space-y-10 md:space-y-16">
-              <h3 className="text-3xl md:text-8xl font-headline italic leading-tight">¿Lista para tu transformación?</h3>
+              <h3 className="text-3xl md:text-7xl lg:text-8xl font-headline italic leading-tight">¿Lista para tu transformación?</h3>
               <p className="text-white/40 max-w-3xl mx-auto font-light text-xl md:text-3xl leading-relaxed">
                 Cada rostro cuenta una historia diferente. Permíteme ayudarte a contar la tuya con el maquillaje que siempre soñaste. Plazas limitadas por temporada.
               </p>
