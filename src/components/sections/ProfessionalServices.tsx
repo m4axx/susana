@@ -156,8 +156,7 @@ export function ProfessionalServices() {
                     {service.price}
                   </div>
                   <Button 
-                    variant="outline" 
-                    className="w-full rounded-none border-white/20 hover:border-accent hover:bg-accent hover:text-black h-14 text-[10px] tracking-[0.3em] uppercase font-bold transition-all"
+                    className="w-full rounded-none bg-accent hover:bg-white text-black h-14 text-[10px] tracking-[0.3em] uppercase font-bold transition-all shadow-lg"
                     asChild
                   >
                     <a href={whatsappUrl} target="_blank">Reservar</a>
