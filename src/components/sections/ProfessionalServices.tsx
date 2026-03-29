@@ -98,8 +98,8 @@ export function ProfessionalServices() {
           </div>
           <div className="relative aspect-[4/5] overflow-hidden group order-1 md:order-2 shadow-2xl">
             <Image
-              src="/(1).JPG"
-              alt="Maquillaje Profesional"
+              src="/sus.jpeg"
+              alt="Maquillaje Profesional por Palmira Garde"
               fill
               className="object-cover transition-transform duration-[4s] group-hover:scale-110 opacity-90"
               priority
