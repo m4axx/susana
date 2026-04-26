@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { MessageSquare, Star, Clock, CheckCircle2, Heart, Brush, Camera, X, Maximize2 } from "lucide-react";
+import { MessageSquare, Star, Clock, CheckCircle2, Heart, Brush, Camera, X, Maximize2, Eye, Sparkles, Footprints } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
@@ -48,6 +48,36 @@ const SERVICES = [
     modality: "Individual / Grupo / Online",
     price: "Precio variable",
     icon: <Camera className="h-5 w-5 text-accent" />,
+  },
+  {
+    id: "lashes",
+    title: "Lifting & Tinte",
+    description: "Eleva y acentúa tu mirada de forma natural sin necesidad de extensiones.",
+    includes: "Rizado permanente + Color intenso",
+    duration: "45 - 60 min",
+    modality: "Presencial",
+    price: "Desde 45€",
+    icon: <Eye className="h-5 w-5 text-accent" />,
+  },
+  {
+    id: "manicure",
+    title: "Manicura Elite",
+    description: "Cuidado profesional para tus manos con productos de alta gama y larga duración.",
+    includes: "Básica (15€) / Semi-permanente (18€)",
+    duration: "40 - 60 min",
+    modality: "Presencial",
+    price: "15€ - 18€",
+    icon: <Sparkles className="h-5 w-5 text-accent" />,
+  },
+  {
+    id: "pedicure",
+    title: "Pedicura Spa",
+    description: "Tratamiento completo para unos pies perfectos, hidratados y relajados.",
+    includes: "Sin esmaltado (25€) / Esmaltado (30€)",
+    duration: "60 min",
+    modality: "Presencial",
+    price: "25€ - 30€",
+    icon: <Footprints className="h-5 w-5 text-accent" />,
   }
 ];
 
