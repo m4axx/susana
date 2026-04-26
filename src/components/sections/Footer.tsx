@@ -1,7 +1,15 @@
+"use client";
 
+import { useState, useEffect } from "react";
 import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
+  const [currentYear, setCurrentYear] = useState(2025);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-white py-32 px-6 border-t border-muted">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-20">
@@ -37,7 +45,7 @@ export function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-32 pt-12 border-t border-muted flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60">
-        <p>&copy; {new Date().getFullYear()} Palmira Garde Elite Beauty. Todos los derechos reservados.</p>
+        <p>&copy; {currentYear} Palmira Garde Elite Beauty. Todos los derechos reservados.</p>
         <div className="flex gap-10">
           <a href="#" className="hover:text-accent">Aviso Legal</a>
           <a href="#" className="hover:text-accent">Privacidad</a>

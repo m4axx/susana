@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -181,7 +180,7 @@ export function ProfessionalServices() {
           </div>
         </div>
 
-        {/* Treatments Section (The Sanctuary) - Updated for Symmetry */}
+        {/* Treatments Section (The Sanctuary) */}
         <div className="bg-white/5 border border-white/10 relative overflow-hidden py-20 md:py-32 px-6 md:px-12">
            <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 blur-[120px] -mr-48 -mt-48" />
            <div className="max-w-6xl mx-auto space-y-20 relative z-10">
@@ -250,8 +249,8 @@ export function ProfessionalServices() {
             <div className="flex">
               <motion.div 
                 className="flex gap-4 md:gap-8 py-8"
-                animate={{ x: [0, "-50%"] }}
-                transition={{ x: { repeat: Infinity, repeatType: "loop", duration: 80, ease: "linear" } }}
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ x: { repeat: Infinity, repeatType: "loop", duration: 60, ease: "linear" } }}
               >
                 {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((src, index) => (
                   <button
