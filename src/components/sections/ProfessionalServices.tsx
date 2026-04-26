@@ -5,10 +5,10 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { MessageSquare, Star, Clock, CheckCircle2, Heart, Brush, Camera, X, Maximize2, Eye, Sparkles, Footprints } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
-const SERVICES = [
+const MAKEUP_SERVICES = [
   {
     id: "social",
     title: "Eventos & Social",
@@ -41,41 +41,41 @@ const SERVICES = [
   },
   {
     id: "workshop",
-    title: "Clases de Automaquillaje",
-    description: "Sesiones VIP donde aprenderás las técnicas profesionales adaptadas a tu rostro.",
+    title: "Automaquillaje VIP",
+    description: "Sesiones donde aprenderás las técnicas profesionales adaptadas a tu rostro.",
     includes: "Asesoría de productos + Guía de pasos",
     duration: "2h aprox.",
-    modality: "Individual / Grupo / Online",
-    price: "Precio variable",
+    modality: "Individual / Online",
+    price: "Consultar",
     icon: <Camera className="h-5 w-5 text-accent" />,
-  },
+  }
+];
+
+const TREATMENT_SERVICES = [
   {
     id: "lashes",
-    title: "Lifting & Tinte",
+    title: "Lifting & Tinte de Pestañas",
     description: "Eleva y acentúa tu mirada de forma natural sin necesidad de extensiones.",
     includes: "Rizado permanente + Color intenso",
     duration: "45 - 60 min",
-    modality: "Presencial",
     price: "Desde 45€",
     icon: <Eye className="h-5 w-5 text-accent" />,
   },
   {
     id: "manicure",
     title: "Manicura Elite",
-    description: "Cuidado profesional para tus manos con productos de alta gama y larga duración.",
+    description: "Cuidado profesional para tus manos con productos de alta gama.",
     includes: "Básica (15€) / Semi-permanente (18€)",
-    duration: "40 - 60 min",
-    modality: "Presencial",
+    duration: "40 - 50 min",
     price: "15€ - 18€",
     icon: <Sparkles className="h-5 w-5 text-accent" />,
   },
   {
     id: "pedicure",
     title: "Pedicura Spa",
-    description: "Tratamiento completo para unos pies perfectos, hidratados y relajados.",
-    includes: "Sin esmaltado (25€) / Esmaltado (30€)",
+    description: "Tratamiento completo para unos pies perfectos e hidratados.",
+    includes: "Sin esmaltar (25€) / Con esmalte (30€)",
     duration: "60 min",
-    modality: "Presencial",
     price: "25€ - 30€",
     icon: <Footprints className="h-5 w-5 text-accent" />,
   }
@@ -114,12 +114,12 @@ export function ProfessionalServices() {
               <h2 className="text-4xl md:text-8xl lg:text-9xl font-headline leading-[0.9] tracking-tighter">Arte en el <br /><span className="italic font-normal text-accent">Rostro.</span></h2>
             </div>
             <p className="text-white/40 text-base md:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
-              Como maquilladora profesional, mi misión es fusionar la técnica de alta definición con una visión artística única. Cada trazo es una declaración de estilo, sofisticación y frescura absoluta.
+              Como maquilladora profesional, mi misión es fusionar la técnica de alta definición con una visión artística única. Cada trazo es una declaración de estilo y sofisticación.
             </p>
             <div className="pt-4">
                <Button 
                 size="lg"
-                className="bg-white text-black hover:bg-accent hover:text-white rounded-none h-16 px-12 text-[10px] tracking-[0.4em] uppercase font-bold transition-all w-full sm:w-auto"
+                className="bg-accent text-black hover:bg-white rounded-none h-16 px-12 text-[10px] tracking-[0.4em] uppercase font-bold transition-all w-full sm:w-auto"
                 asChild
               >
                 <a href={whatsappUrl} target="_blank">Consultar Agenda</a>
@@ -140,61 +140,85 @@ export function ProfessionalServices() {
           </div>
         </div>
 
-        {/* Services Grid */}
+        {/* Makeup Services Grid */}
         <div className="space-y-12 md:space-y-24">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-8 md:pb-12">
             <div className="space-y-4">
-              <span className="text-accent uppercase tracking-[0.4em] text-[10px] font-bold">The Offerings</span>
-              <h3 className="text-3xl md:text-6xl font-headline italic">Tarifas & Servicios</h3>
+              <span className="text-accent uppercase tracking-[0.4em] text-[10px] font-bold">The Portfolio</span>
+              <h3 className="text-3xl md:text-6xl font-headline italic">Maquillaje de Autor</h3>
             </div>
-            <p className="text-white/40 text-[10px] md:text-sm tracking-[0.3em] uppercase max-w-xs md:text-right">Excelencia técnica para resultados de alfombra roja</p>
+            <p className="text-white/40 text-[10px] md:text-sm tracking-[0.3em] uppercase max-w-xs md:text-right">Técnicas PRO para resultados de alfombra roja</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
-            {SERVICES.map((service) => (
-              <div key={service.id} className="group bg-white/[0.03] p-8 md:p-10 border border-white/5 hover:border-accent/40 transition-all duration-700 flex flex-col justify-between min-h-full hover:bg-white/[0.05] relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 blur-3xl -mr-16 -mt-16 group-hover:bg-accent/10 transition-colors" />
-                
-                <div className="space-y-8 relative z-10">
+            {MAKEUP_SERVICES.map((service) => (
+              <div key={service.id} className="group bg-white/[0.02] p-8 md:p-10 border border-white/5 hover:border-accent/40 transition-all duration-700 flex flex-col justify-between hover:bg-white/[0.04]">
+                <div className="space-y-8">
                   <div className="p-3 bg-accent/10 w-fit rounded-full group-hover:bg-accent group-hover:text-black transition-all duration-500">
                     {service.icon}
                   </div>
                   <div className="space-y-4">
-                    <h4 className="text-2xl md:text-3xl font-headline italic tracking-tight">{service.title}</h4>
-                    <p className="text-white/40 text-sm font-light leading-relaxed">
-                      {service.description}
-                    </p>
+                    <h4 className="text-2xl md:text-3xl font-headline italic">{service.title}</h4>
+                    <p className="text-white/40 text-sm font-light leading-relaxed">{service.description}</p>
                   </div>
-                  
-                  <div className="space-y-4 pt-6 border-t border-white/10">
-                    <div className="flex items-start gap-3 text-[11px] text-white/60">
+                  <div className="space-y-3 pt-4 border-t border-white/5 text-[11px] text-white/60">
+                    <div className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
                       <span>{service.includes}</span>
                     </div>
-                    <div className="flex items-center gap-3 text-[11px] text-white/60">
+                    <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4 text-accent shrink-0" />
                       <span>{service.duration}</span>
                     </div>
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">
-                      {service.modality}
-                    </div>
                   </div>
                 </div>
-                
-                <div className="pt-10 space-y-6 relative z-10">
-                  <div className="text-white text-2xl font-headline italic">
-                    {service.price}
-                  </div>
-                  <Button 
-                    className="w-full rounded-none bg-accent hover:bg-white text-black h-14 text-[10px] tracking-[0.3em] uppercase font-bold transition-all shadow-lg"
-                    asChild
-                  >
-                    <a href={whatsappUrl} target="_blank">Reservar</a>
-                  </Button>
+                <div className="pt-8 flex items-center justify-between">
+                  <div className="text-white text-xl font-headline italic">{service.price}</div>
+                  <a href={whatsappUrl} target="_blank" className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold border-b border-accent/30 hover:border-accent transition-all">Reservar</a>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Treatments Section (Different approach) */}
+        <div className="bg-white/5 p-8 md:p-24 border border-white/10 relative overflow-hidden">
+           <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 blur-[120px] -mr-48 -mt-48" />
+           <div className="space-y-16 relative z-10">
+              <div className="text-center space-y-4">
+                 <span className="text-accent uppercase tracking-[0.5em] text-[10px] font-bold">The Sanctuary</span>
+                 <h3 className="text-4xl md:text-7xl font-headline italic">Tratamientos & Bienestar</h3>
+                 <p className="text-white/40 max-w-xl mx-auto font-light text-sm md:text-lg">Un espacio dedicado a revitalizar tu esencia a través del cuidado minucioso y la estética de alta gama.</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                 {TREATMENT_SERVICES.map((treat) => (
+                    <div key={treat.id} className="space-y-8 p-8 border-l border-white/10 hover:border-accent transition-colors group">
+                       <div className="flex items-center gap-6">
+                          <div className="text-accent group-hover:scale-110 transition-transform">{treat.icon}</div>
+                          <h4 className="text-2xl font-headline italic">{treat.title}</h4>
+                       </div>
+                       <p className="text-white/40 text-sm font-light">{treat.description}</p>
+                       <ul className="space-y-4 text-[11px] text-white/60">
+                          <li className="flex gap-3">
+                             <CheckCircle2 className="h-4 w-4 text-accent shrink-0" />
+                             {treat.includes}
+                          </li>
+                          <li className="flex gap-3">
+                             <Clock className="h-4 w-4 text-accent shrink-0" />
+                             {treat.duration}
+                          </li>
+                       </ul>
+                       <div className="pt-6 flex items-center justify-between">
+                          <span className="text-2xl font-headline text-accent italic">{treat.price}</span>
+                          <Button size="sm" className="bg-white text-black hover:bg-accent rounded-none text-[9px] font-bold tracking-[0.3em] uppercase" asChild>
+                             <a href={whatsappUrl} target="_blank">Cita</a>
+                          </Button>
+                       </div>
+                    </div>
+                 ))}
+              </div>
+           </div>
         </div>
 
         {/* Portfolio Gallery */}
@@ -202,7 +226,6 @@ export function ProfessionalServices() {
           <div className="text-center space-y-4">
             <span className="text-accent uppercase tracking-[0.5em] text-[10px] font-bold">The Portfolio</span>
             <h3 className="text-4xl md:text-8xl font-headline">Galería Creativa</h3>
-            <p className="text-white/30 text-sm md:text-xl font-light max-w-2xl mx-auto">Un viaje visual por mis creaciones más impactantes. Arte, color y precisión en cada detalle.</p>
           </div>
           
           <div className="relative w-full overflow-hidden">
@@ -212,23 +235,14 @@ export function ProfessionalServices() {
             <div className="flex">
               <motion.div 
                 className="flex gap-4 md:gap-8 py-8"
-                animate={{
-                  x: [0, "-50%"],
-                }}
-                transition={{
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 80,
-                    ease: "linear",
-                  },
-                }}
+                animate={{ x: [0, "-50%"] }}
+                transition={{ x: { repeat: Infinity, repeatType: "loop", duration: 80, ease: "linear" } }}
               >
                 {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((src, index) => (
                   <button
                     key={`${src}-${index}`} 
                     onClick={() => setSelectedImage(src)}
-                    className="relative flex-shrink-0 w-[240px] md:w-[400px] aspect-[3/4] overflow-hidden group cursor-pointer shadow-2xl bg-white/5 border-none outline-none focus:ring-2 focus:ring-accent"
+                    className="relative flex-shrink-0 w-[240px] md:w-[400px] aspect-[3/4] overflow-hidden group cursor-pointer shadow-2xl bg-white/5 border-none outline-none"
                   >
                     <Image
                       src={src}
@@ -239,7 +253,7 @@ export function ProfessionalServices() {
                     />
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col items-center justify-center gap-4">
                        <Maximize2 className="h-8 w-8 text-accent animate-pulse" />
-                       <span className="text-[10px] tracking-[0.5em] uppercase font-bold border border-white/40 px-6 py-3 backdrop-blur-md">View Artistry</span>
+                       <span className="text-[10px] tracking-[0.5em] uppercase font-bold border border-white/40 px-6 py-3">Ver Detalle</span>
                     </div>
                   </button>
                 ))}
@@ -255,18 +269,12 @@ export function ProfessionalServices() {
             <div className="relative w-full h-[80vh] flex items-center justify-center group">
               {selectedImage && (
                 <div className="relative w-full h-full">
-                  <Image
-                    src={selectedImage}
-                    alt="Detalle de maquillaje profesional"
-                    fill
-                    className="object-contain"
-                    unoptimized
-                  />
+                  <Image src={selectedImage} alt="Detalle de maquillaje" fill className="object-contain" unoptimized />
                 </div>
               )}
               <button 
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/80 text-white transition-colors rounded-full z-[100]"
+                className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/80 text-white rounded-full z-[100]"
               >
                 <X className="h-6 w-6" />
               </button>
@@ -283,9 +291,9 @@ export function ProfessionalServices() {
                </div>
             </div>
             <div className="space-y-10 md:space-y-16">
-              <h3 className="text-3xl md:text-7xl lg:text-8xl font-headline italic leading-tight">¿Lista para tu transformación?</h3>
+              <h3 className="text-3xl md:text-7xl lg:text-8xl font-headline italic leading-tight">Tu transformación.</h3>
               <p className="text-white/40 max-w-3xl mx-auto font-light text-xl md:text-3xl leading-relaxed">
-                Cada rostro cuenta una historia diferente. Permíteme ayudarte a contar la tuya con el maquillaje que siempre soñaste. Plazas limitadas por temporada.
+                Cada rostro cuenta una historia diferente. Permíteme ayudarte a contar la tuya con el cuidado y el arte que mereces.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12 pt-8">
                 <Button 
