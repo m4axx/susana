@@ -54,30 +54,30 @@ const MAKEUP_SERVICES = [
 const TREATMENT_SERVICES = [
   {
     id: "lashes",
-    title: "Lifting & Tinte de Pestañas",
+    title: "Lifting & Tinte",
     description: "Eleva y acentúa tu mirada de forma natural sin necesidad de extensiones.",
     includes: "Rizado permanente + Color intenso",
     duration: "45 - 60 min",
     price: "Desde 45€",
-    icon: <Eye className="h-5 w-5 text-accent" />,
+    icon: <Eye className="h-6 w-6 text-accent" />,
   },
   {
     id: "manicure",
     title: "Manicura Elite",
-    description: "Cuidado profesional para tus manos con productos de alta gama.",
+    description: "Cuidado profesional para tus manos con productos de alta gama y duraderos.",
     includes: "Básica (15€) / Semi-permanente (18€)",
     duration: "40 - 50 min",
     price: "15€ - 18€",
-    icon: <Sparkles className="h-5 w-5 text-accent" />,
+    icon: <Sparkles className="h-6 w-6 text-accent" />,
   },
   {
     id: "pedicure",
     title: "Pedicura Spa",
-    description: "Tratamiento completo para unos pies perfectos e hidratados.",
+    description: "Tratamiento completo para unos pies perfectos, suaves e hidratados.",
     includes: "Sin esmaltar (25€) / Con esmalte (30€)",
     duration: "60 min",
     price: "25€ - 30€",
-    icon: <Footprints className="h-5 w-5 text-accent" />,
+    icon: <Footprints className="h-6 w-6 text-accent" />,
   }
 ];
 
@@ -152,7 +152,7 @@ export function ProfessionalServices() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
             {MAKEUP_SERVICES.map((service) => (
-              <div key={service.id} className="group bg-white/[0.02] p-8 md:p-10 border border-white/5 hover:border-accent/40 transition-all duration-700 flex flex-col justify-between hover:bg-white/[0.04]">
+              <div key={service.id} className="group bg-white/[0.02] p-8 md:p-10 border border-white/5 hover:border-accent/40 transition-all duration-700 flex flex-col justify-between hover:bg-white/[0.04] min-h-[400px]">
                 <div className="space-y-8">
                   <div className="p-3 bg-accent/10 w-fit rounded-full group-hover:bg-accent group-hover:text-black transition-all duration-500">
                     {service.icon}
@@ -181,38 +181,53 @@ export function ProfessionalServices() {
           </div>
         </div>
 
-        {/* Treatments Section (Different approach) */}
-        <div className="bg-white/5 p-8 md:p-24 border border-white/10 relative overflow-hidden">
+        {/* Treatments Section (The Sanctuary) - Updated for Symmetry */}
+        <div className="bg-white/5 border border-white/10 relative overflow-hidden py-20 md:py-32 px-6 md:px-12">
            <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 blur-[120px] -mr-48 -mt-48" />
-           <div className="space-y-16 relative z-10">
+           <div className="max-w-6xl mx-auto space-y-20 relative z-10">
               <div className="text-center space-y-4">
                  <span className="text-accent uppercase tracking-[0.5em] text-[10px] font-bold">The Sanctuary</span>
                  <h3 className="text-4xl md:text-7xl font-headline italic">Tratamientos & Bienestar</h3>
-                 <p className="text-white/40 max-w-xl mx-auto font-light text-sm md:text-lg">Un espacio dedicado a revitalizar tu esencia a través del cuidado minucioso y la estética de alta gama.</p>
+                 <p className="text-white/40 max-w-xl mx-auto font-light text-sm md:text-lg">
+                    Un espacio dedicado a revitalizar tu esencia a través del cuidado minucioso y la estética de alta gama.
+                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                  {TREATMENT_SERVICES.map((treat) => (
-                    <div key={treat.id} className="space-y-8 p-8 border-l border-white/10 hover:border-accent transition-colors group">
-                       <div className="flex items-center gap-6">
-                          <div className="text-accent group-hover:scale-110 transition-transform">{treat.icon}</div>
-                          <h4 className="text-2xl font-headline italic">{treat.title}</h4>
+                    <div key={treat.id} className="bg-[#0A0A0A] p-10 border border-white/5 hover:border-accent transition-all duration-700 group flex flex-col justify-between">
+                       <div className="space-y-10">
+                          <div className="flex items-center gap-6">
+                             <div className="p-4 bg-accent/10 rounded-full text-accent group-hover:bg-accent group-hover:text-black transition-all duration-500 shrink-0">
+                                {treat.icon}
+                             </div>
+                             <h4 className="text-2xl font-headline italic">{treat.title}</h4>
+                          </div>
+                          
+                          <p className="text-white/40 text-sm font-light leading-relaxed min-h-[60px]">
+                             {treat.description}
+                          </p>
+
+                          <ul className="space-y-4 text-[11px] text-white/60 pt-6 border-t border-white/5">
+                             <li className="flex gap-3">
+                                <CheckCircle2 className="h-4 w-4 text-accent shrink-0" />
+                                {treat.includes}
+                             </li>
+                             <li className="flex gap-3">
+                                <Clock className="h-4 w-4 text-accent shrink-0" />
+                                {treat.duration}
+                             </li>
+                          </ul>
                        </div>
-                       <p className="text-white/40 text-sm font-light">{treat.description}</p>
-                       <ul className="space-y-4 text-[11px] text-white/60">
-                          <li className="flex gap-3">
-                             <CheckCircle2 className="h-4 w-4 text-accent shrink-0" />
-                             {treat.includes}
-                          </li>
-                          <li className="flex gap-3">
-                             <Clock className="h-4 w-4 text-accent shrink-0" />
-                             {treat.duration}
-                          </li>
-                       </ul>
-                       <div className="pt-6 flex items-center justify-between">
+
+                       <div className="pt-10 flex items-center justify-between border-t border-white/5 mt-8">
                           <span className="text-2xl font-headline text-accent italic">{treat.price}</span>
-                          <Button size="sm" className="bg-white text-black hover:bg-accent rounded-none text-[9px] font-bold tracking-[0.3em] uppercase" asChild>
-                             <a href={whatsappUrl} target="_blank">Cita</a>
+                          <Button 
+                             size="sm" 
+                             className="bg-accent text-black hover:bg-white rounded-none h-12 px-8 text-[9px] font-bold tracking-[0.3em] uppercase transition-all" 
+                             asChild
+                          >
+                             <a href={whatsappUrl} target="_blank">Cita VIP</a>
                           </Button>
                        </div>
                     </div>
