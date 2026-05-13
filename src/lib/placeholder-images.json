@@ -15,8 +15,8 @@
     {
       "id": "ringana-logo",
       "description": "Logo oficial de Ringana Partner",
-      "imageUrl": "https://picsum.photos/seed/ringana-brand/400/200",
-      "imageHint": "minimalist organic brand logo"
+      "imageUrl": "/ringana-logo.svg",
+      "imageHint": "ringana brand logo"
     },
     {
       "id": "post-1",

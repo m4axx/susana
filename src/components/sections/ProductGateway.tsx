@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Leaf, ShieldCheck, Zap } from "lucide-react";
@@ -36,8 +35,9 @@ export function ProductGateway() {
                   src={ringanaLogo.imageUrl}
                   alt="Ringana Official Partner"
                   fill
-                  className="object-contain filter grayscale brightness-0 opacity-80"
+                  className="object-contain opacity-100"
                   data-ai-hint="ringana logo brand"
+                  unoptimized
                 />
               )}
             </div>
