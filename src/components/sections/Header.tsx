@@ -21,7 +21,6 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Bloquear el scroll del cuerpo cuando el menú está abierto
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -38,7 +37,6 @@ export function Header() {
         isMenuOpen && "bg-transparent border-none shadow-none"
       )}>
         <div className="max-w-7xl mx-auto flex items-center justify-between relative z-[110]">
-          {/* Lado Izquierdo: Botón Menú y Nav Desktop */}
           <div className="flex items-center gap-8">
             <button 
               className="p-2 hover:bg-black/5 transition-colors focus:outline-none"
@@ -54,12 +52,11 @@ export function Header() {
             
             <nav className="hidden lg:flex items-center gap-10">
               <Link href="/servicios" className={cn("text-[10px] font-bold uppercase tracking-[0.3em] hover-gold", isScrolled ? "text-primary" : "text-white")}>Servicios</Link>
-              <Link href="/#productos" className={cn("text-[10px] font-bold uppercase tracking-[0.3em] hover-gold", isScrolled ? "text-primary" : "text-white")}>Marcas</Link>
+              <Link href="/#productos" className={cn("text-[10px] font-bold uppercase tracking-[0.3em] hover-gold", isScrolled ? "text-primary" : "text-white")}>Ringana Fresh</Link>
               <Link href="/#sobre-mi" className={cn("text-[10px] font-bold uppercase tracking-[0.3em] hover-gold", isScrolled ? "text-primary" : "text-white")}>El Ritual</Link>
             </nav>
           </div>
 
-          {/* Lado Derecho: Logo y CTA siempre juntos para evitar solapamiento */}
           <div className="flex items-center gap-4 md:gap-12">
             <Link href="/" className={cn(
               "text-base md:text-2xl font-headline tracking-tighter flex items-center gap-1 md:gap-2 transition-all duration-700",
@@ -70,20 +67,19 @@ export function Header() {
             </Link>
             
             <a 
-              href="https://wa.me/qr/4JSUW45MSRMZM1" 
+              href="https://palmiragarde.ringana.com/" 
               target="_blank"
               className={cn(
                 "text-[8px] md:text-[10px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] bg-primary text-primary-foreground px-3 py-2 md:px-6 md:py-3.5 hover:bg-accent transition-all whitespace-nowrap",
                 isMenuOpen && "opacity-0 pointer-events-none"
               )}
             >
-              Consulta VIP
+              Tienda Ringana
             </a>
           </div>
         </div>
       </header>
 
-      {/* Menú Overlay Móvil - Fondo Sólido y Z-Index Superior */}
       <div className={cn(
         "fixed inset-0 bg-white z-[90] transition-all duration-500 ease-in-out flex flex-col items-center justify-center gap-10",
         isMenuOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-full"
@@ -94,9 +90,9 @@ export function Header() {
         
         <div className="flex flex-col items-center gap-10 text-center">
           <Link href="/servicios" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic text-primary hover:text-accent transition-colors">Servicios Pro</Link>
-          <Link href="/#productos" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic text-primary hover:text-accent transition-colors">Nuestras Marcas</Link>
+          <Link href="/#productos" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic text-primary hover:text-accent transition-colors">Ringana Fresh</Link>
           <Link href="/#sobre-mi" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic text-primary hover:text-accent transition-colors">El Ritual</Link>
-          <Link href="/#limelife-detalles" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic text-primary hover:text-accent transition-colors">Shop Online</Link>
+          <a href="https://palmiragarde.ringana.com/" target="_blank" className="text-2xl md:text-3xl font-headline italic text-primary hover:text-accent transition-colors">Shop Online</a>
         </div>
 
         <div className="mt-12">

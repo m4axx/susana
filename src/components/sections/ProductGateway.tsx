@@ -1,86 +1,95 @@
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Leaf, ShieldCheck, Zap } from "lucide-react";
+
+const RINGANA_FEATURES = [
+  {
+    icon: <Leaf className="h-6 w-6 text-accent" />,
+    title: "100% Frescura",
+    description: "Sin conservantes artificiales ni aditivos químicos. Solo la fuerza pura de la naturaleza."
+  },
+  {
+    icon: <ShieldCheck className="h-6 w-6 text-accent" />,
+    title: "Sostenibilidad Real",
+    description: "Envases ecológicos y procesos de producción con huella de carbono neutra."
+  },
+  {
+    icon: <Zap className="h-6 w-6 text-accent" />,
+    title: "Eficacia Activa",
+    description: "Sustancias vegetales altamente concentradas que actúan de inmediato en tu piel."
+  }
+];
 
 export function ProductGateway() {
   return (
     <section className="py-32 px-6 bg-white" id="productos">
-      <div className="max-w-7xl mx-auto space-y-24">
+      <div className="max-w-7xl mx-auto space-y-32">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
           <div className="space-y-6">
-            <span className="text-accent uppercase tracking-[0.4em] text-[10px] font-bold">Curated Selection</span>
-            <h2 className="text-5xl md:text-7xl font-headline italic leading-none">Las Marcas</h2>
+            <span className="text-accent uppercase tracking-[0.4em] text-[10px] font-bold">Ethical Beauty</span>
+            <h2 className="text-5xl md:text-7xl font-headline italic leading-none">Ringana Fresh</h2>
           </div>
           <p className="text-muted-foreground max-w-md font-light leading-relaxed text-lg">
-            He seleccionado personalmente estas firmas por su compromiso innegociable con la pureza, la innovación y el lujo responsable.
+            He seleccionado Ringana por ser la única marca que garantiza una frescura total, entregando nutrientes vivos directamente desde su laboratorio a tu hogar.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-20">
-          {/* LimeLife Card */}
-          <div className="group space-y-10">
-            <div className="relative aspect-[3/2] overflow-hidden bg-black flex items-center justify-center p-12 shadow-sm transition-all duration-500 group-hover:shadow-xl">
-              <div className="relative w-full h-24">
-                <Image
-                  src="/Newlogo.svg"
-                  alt="LimeLife Professional"
-                  fill
-                  className="object-contain brightness-0 invert transition-transform duration-700 group-hover:scale-110"
-                  priority
-                />
-              </div>
-              <div className="absolute top-6 right-8 flex gap-1">
-                {[1, 2, 3, 4, 5].map(s => <Star key={s} className="h-3 w-3 fill-accent text-accent" />)}
-              </div>
-              <div className="absolute inset-0 border border-white/10 m-4 pointer-events-none" />
-            </div>
-            <div className="space-y-6 px-4">
-              <h3 className="text-4xl font-headline italic">LimeLife</h3>
-              <p className="text-muted-foreground font-light leading-relaxed text-lg">
-                El estándar de oro de la cosmética profesional. Ingredientes limpios con un rendimiento impecable bajo cualquier luz.
-              </p>
-              <Button 
-                variant="outline" 
-                className="rounded-none px-0 h-auto text-[10px] tracking-[0.3em] uppercase font-bold border-none hover:bg-transparent hover:text-accent group/btn" 
-                asChild
-              >
-                <a href="#limelife-detalles" className="flex items-center gap-4">
-                  Explorar Colección <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-2" />
-                </a>
-              </Button>
-            </div>
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="relative aspect-square md:aspect-[4/5] overflow-hidden bg-[#FAF9F6] border border-muted shadow-2xl group">
+             <Image 
+                src="https://picsum.photos/seed/ringana-fresh/1000/1250" 
+                alt="Ringana Freshness" 
+                fill 
+                className="object-cover transition-transform duration-[3s] group-hover:scale-105"
+                data-ai-hint="fresh skincare"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+             <div className="absolute bottom-0 left-0 bg-white p-10 md:p-16 max-w-xs md:max-w-sm">
+                <div className="space-y-6">
+                   <h3 className="text-3xl font-headline italic">El Ritual de Frescura</h3>
+                   <p className="text-muted-foreground text-sm font-light leading-relaxed">
+                      Descubre cómo la cosmética fresca puede transformar tu piel mediante ingredientes vegetales puros y una ética innegociable.
+                   </p>
+                   <Button 
+                    variant="outline" 
+                    className="rounded-none px-0 h-auto text-[10px] tracking-[0.3em] uppercase font-bold border-none hover:bg-transparent hover:text-accent group/btn" 
+                    asChild
+                  >
+                    <a href="https://palmiragarde.ringana.com/" target="_blank" className="flex items-center gap-4">
+                      Ver Catálogo Fresh <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-2" />
+                    </a>
+                  </Button>
+                </div>
+             </div>
           </div>
 
-          {/* Ringana Card */}
-          <div className="group space-y-10 md:mt-24">
-            <div className="relative aspect-[3/2] overflow-hidden bg-[#FAF9F6] flex items-center justify-center p-12 shadow-sm transition-all duration-500 group-hover:shadow-xl border border-muted">
-              <div className="relative w-full h-24">
-                <Image
-                  src="/ringana-logo.svg"
-                  alt="Ringana Freshness"
-                  fill
-                  className="object-contain transition-transform duration-700 group-hover:scale-110"
-                />
+          <div className="space-y-16">
+            {RINGANA_FEATURES.map((feature, idx) => (
+              <div key={idx} className="flex gap-8 group">
+                <div className="shrink-0 p-4 bg-accent/5 rounded-full h-fit group-hover:bg-accent group-hover:text-white transition-all duration-500">
+                  {feature.icon}
+                </div>
+                <div className="space-y-4">
+                  <h4 className="text-2xl font-headline italic">{feature.title}</h4>
+                  <p className="text-muted-foreground font-light leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
-               <div className="absolute bottom-0 left-0 bg-accent text-white px-8 py-3 text-[10px] tracking-[0.3em] font-bold uppercase">
-                Frescura 100%
-              </div>
-              <div className="absolute inset-0 border border-black/5 m-4 pointer-events-none" />
-            </div>
-            <div className="space-y-6 px-4">
-              <h3 className="text-4xl font-headline italic">Ringana</h3>
-              <p className="text-muted-foreground font-light leading-relaxed text-lg">
-                Cosmética fresca y ética. Sin conservantes, sin rellenos. Solo la fuerza de la naturaleza entregada directamente en tu puerta.
-              </p>
-              <Button 
-                variant="outline" 
-                className="rounded-none px-0 h-auto text-[10px] tracking-[0.3em] uppercase font-bold border-none hover:bg-transparent hover:text-accent group/btn" 
-                asChild
-              >
-                <a href="https://www.ringana.com/?lang=es" target="_blank" className="flex items-center gap-4">
-                  Ir a Ringana <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-2" />
-                </a>
-              </Button>
+            ))}
+            
+            <div className="pt-8 border-t border-muted">
+               <div className="bg-accent/5 p-10 space-y-6">
+                  <h4 className="text-[10px] font-bold uppercase tracking-[0.4em]">Promoción Ringana</h4>
+                  <p className="font-headline text-3xl italic">20€ de regalo en tu primer pedido.</p>
+                  <Button 
+                    className="bg-primary text-white hover:bg-accent hover:text-black rounded-none h-14 px-10 text-[10px] tracking-[0.3em] uppercase font-bold transition-all w-full"
+                    asChild
+                  >
+                    <a href="https://wa.me/qr/4JSUW45MSRMZM1" target="_blank">Conseguir mi Vale</a>
+                  </Button>
+               </div>
             </div>
           </div>
         </div>

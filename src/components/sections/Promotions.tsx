@@ -24,21 +24,16 @@ export function Promotions() {
           </div>
           <div className="relative z-10 p-12 md:p-20 space-y-10 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent text-accent-foreground text-[10px] font-bold uppercase tracking-[0.3em]">
-              <Tag className="h-3 w-3" /> Beneficios Exclusivos
+              <Tag className="h-3 w-3" /> Beneficio Exclusivo
             </div>
             
             <div className="space-y-8">
               <div className="space-y-4">
                 <h3 className="text-accent text-[10px] font-bold uppercase tracking-[0.4em]">Ringana Freshness</h3>
                 <h2 className="text-4xl md:text-6xl font-headline leading-tight">20€ de Regalo <br/><span className="italic font-normal">en tu pedido</span></h2>
-              </div>
-
-              <div className="h-px w-24 bg-white/20" />
-
-              <div className="space-y-4">
-                <h3 className="text-accent text-[10px] font-bold uppercase tracking-[0.4em]">LimeLife Professional</h3>
-                <h2 className="text-3xl md:text-5xl font-headline leading-tight italic font-normal text-white/90">-10% de Bienvenida</h2>
-                <p className="text-white/60 font-light tracking-wide">Válido para tu primera compra en toda la colección de maquillaje y skincare.</p>
+                <p className="text-white/60 font-light tracking-wide max-w-md">
+                   Únete a la revolución de la cosmética fresca. Solicita tu código de bienvenida y disfruta de la pureza de Ringana con un descuento exclusivo.
+                </p>
               </div>
             </div>
 
@@ -48,7 +43,7 @@ export function Promotions() {
               asChild
             >
               <a href="https://wa.me/qr/4JSUW45MSRMZM1" target="_blank">
-                <Sparkles className="h-4 w-4 mr-2 group-hover:animate-pulse" /> Reclamar Mis Códigos
+                <Sparkles className="h-4 w-4 mr-2 group-hover:animate-pulse" /> Reclamar Mi Código Ringana
               </a>
             </Button>
           </div>

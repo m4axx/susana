@@ -13,36 +13,6 @@
       "imageHint": "palmira garde portrait"
     },
     {
-      "id": "ll-novedades",
-      "description": "Novedades de maquillaje LimeLife",
-      "imageUrl": "/Novedades.jpg",
-      "imageHint": "makeup palette"
-    },
-    {
-      "id": "ll-maquillaje",
-      "description": "Categoría Maquillaje LimeLife",
-      "imageUrl": "/Maquillaje.jpg",
-      "imageHint": "lipstick detail"
-    },
-    {
-      "id": "ll-piel",
-      "description": "Categoría Cuidado de la Piel LimeLife",
-      "imageUrl": "/Cuidado.jpg",
-      "imageHint": "face serum"
-    },
-    {
-      "id": "ll-cabello",
-      "description": "Categoría Cabello LimeLife",
-      "imageUrl": "/Cabello.jpg",
-      "imageHint": "beauty hair"
-    },
-    {
-      "id": "ll-colecciones",
-      "description": "Categoría Colecciones LimeLife",
-      "imageUrl": "/Colecciones.jpg",
-      "imageHint": "makeup kit"
-    },
-    {
       "id": "post-1",
       "description": "Ritual de belleza matutino",
       "imageUrl": "https://picsum.photos/seed/blog-1/800/600",
