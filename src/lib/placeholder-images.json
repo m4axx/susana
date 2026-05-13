@@ -13,6 +13,12 @@
       "imageHint": "palmira garde portrait"
     },
     {
+      "id": "ringana-logo",
+      "description": "Logo oficial de Ringana Partner",
+      "imageUrl": "https://picsum.photos/seed/ringana-brand/400/200",
+      "imageHint": "minimalist organic brand logo"
+    },
+    {
       "id": "post-1",
       "description": "Ritual de belleza matutino",
       "imageUrl": "https://picsum.photos/seed/blog-1/800/600",
@@ -41,24 +47,6 @@
       "description": "Maquillaje artístico creativo",
       "imageUrl": "https://picsum.photos/seed/artistic-makeup-face/800/1000",
       "imageHint": "artistic makeup"
-    },
-    {
-      "id": "portfolio-1",
-      "description": "Look artístico profesional 1",
-      "imageUrl": "https://picsum.photos/seed/p1-makeup/800/1200",
-      "imageHint": "creative makeup"
-    },
-    {
-      "id": "portfolio-2",
-      "description": "Look artístico profesional 2",
-      "imageUrl": "https://picsum.photos/seed/p2-glam-look/800/1200",
-      "imageHint": "glam makeup"
-    },
-    {
-      "id": "portfolio-3",
-      "description": "Look artístico profesional 3",
-      "imageUrl": "https://picsum.photos/seed/p3-editorial-face/800/1200",
-      "imageHint": "editorial makeup"
     }
   ]
 }
