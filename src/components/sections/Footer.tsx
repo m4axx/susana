@@ -1,54 +1,63 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Instagram, Facebook, Mail, MapPin } from "lucide-react";
+import { Instagram, Facebook, Mail, Leaf } from "lucide-react";
 
 export function Footer() {
-  const [currentYear, setCurrentYear] = useState(2025);
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
+  const [year, setYear] = useState(2026);
+  useEffect(() => setYear(new Date().getFullYear()), []);
 
   return (
-    <footer className="bg-white py-32 px-6 border-t border-muted">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-20">
-        <div className="space-y-10 md:col-span-2">
-          <div className="text-3xl font-headline font-bold">
-            Palmira <span className="italic font-normal text-accent">Garde</span>
+    <footer className="section-dark relative bg-[hsl(20_10%_5%)] text-foreground overflow-clip">
+      <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+          <div className="space-y-5 md:col-span-1">
+            <div className="flex items-center gap-2">
+              <Leaf className="h-5 w-5 text-primary" />
+              <span className="font-headline text-2xl">
+                Palmira <span className="italic text-primary">Garde</span>
+              </span>
+            </div>
+            <p className="text-muted-foreground font-light leading-relaxed max-w-xs text-sm">
+              Cosmética fresca Ringana. Piel sana, conciencia limpia. De mujer a
+              mujer.
+            </p>
+            <div className="flex items-center gap-3 pt-1">
+              <a href="#" aria-label="Instagram" className="h-10 w-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a href="#" aria-label="Facebook" className="h-10 w-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
+                <Facebook className="h-4 w-4" />
+              </a>
+            </div>
           </div>
-          <p className="text-muted-foreground font-light text-xl leading-relaxed max-w-md">
-            Un refugio donde la ciencia de la naturaleza se encuentra con la estética de alta gama. Belleza sin compromisos.
-          </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="p-3 border border-muted hover:border-accent hover:text-accent transition-all"><Instagram className="h-5 w-5" /></a>
-            <a href="#" className="p-3 border border-muted hover:border-accent hover:text-accent transition-all"><Facebook className="h-5 w-5" /></a>
+
+          <div className="space-y-5">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/70">Explora</h4>
+            <ul className="space-y-3 text-muted-foreground text-sm font-light">
+              <li><a href="#sobre-mi" className="hover:text-primary transition-colors">Sobre Palmira</a></li>
+              <li><a href="#productos" className="hover:text-primary transition-colors">Por qué Ringana</a></li>
+              <li><a href="#testimonios" className="hover:text-primary transition-colors">Testimonios</a></li>
+              <li><a href="#oferta" className="hover:text-primary transition-colors">Mi código 20€</a></li>
+            </ul>
+          </div>
+
+          <div className="space-y-5">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/70">Contacto</h4>
+            <ul className="space-y-3 text-muted-foreground text-sm font-light">
+              <li className="flex items-center gap-2.5"><Mail className="h-4 w-4 text-primary" /> concierge@palmiragarde.com</li>
+              <li>WhatsApp +34 619 51 64 12</li>
+            </ul>
           </div>
         </div>
 
-        <div className="space-y-10">
-          <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Navegación</h4>
-          <ul className="space-y-6 text-muted-foreground text-sm tracking-wide font-medium">
-            <li><a href="#servicios" className="hover:text-accent transition-colors uppercase">Servicios</a></li>
-            <li><a href="#productos" className="hover:text-accent transition-colors uppercase">Colecciones</a></li>
-            <li><a href="#sobre-mi" className="hover:text-accent transition-colors uppercase">El Ritual</a></li>
-            <li><a href="#blog" className="hover:text-accent transition-colors uppercase">Editorial</a></li>
-          </ul>
-        </div>
-
-        <div className="space-y-10">
-          <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Contacto</h4>
-          <ul className="space-y-6 text-muted-foreground text-sm tracking-wide font-medium">
-            <li className="flex items-center gap-4"><Mail className="h-4 w-4 text-accent" /> concierge@palmiragarde.com</li>
-            <li className="flex items-center gap-4"><MapPin className="h-4 w-4 text-accent" /> Madrid / Barcelona</li>
-          </ul>
-        </div>
-      </div>
-      <div className="max-w-7xl mx-auto mt-32 pt-12 border-t border-muted flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60">
-        <p>&copy; {currentYear} Palmira Garde Elite Beauty. Todos los derechos reservados.</p>
-        <div className="flex gap-10">
-          <a href="#" className="hover:text-accent">Aviso Legal</a>
-          <a href="#" className="hover:text-accent">Privacidad</a>
+        <div className="mt-14 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-5 text-xs text-muted-foreground">
+          <p>&copy; {year} Palmira Garde · Cosmética fresca Ringana.</p>
+          <div className="flex flex-wrap justify-center gap-x-7 gap-y-2">
+            <a href="/aviso-legal" className="hover:text-primary transition-colors">Aviso legal</a>
+            <a href="/privacidad" className="hover:text-primary transition-colors">Privacidad</a>
+            <a href="/cookies" className="hover:text-primary transition-colors">Cookies</a>
+          </div>
         </div>
       </div>
     </footer>

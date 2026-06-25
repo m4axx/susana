@@ -1,110 +1,44 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { track } from "@/lib/pixel";
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [showLogo, setShowLogo] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 20);
-      setShowLogo(scrollY > 300);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-  }, [isMenuOpen]);
-
   return (
-    <>
-      <header className={cn(
-        "fixed top-0 left-0 right-0 z-[100] transition-all duration-700 ease-in-out px-4 md:px-12",
-        isScrolled ? "bg-white/95 backdrop-blur-xl py-3 md:py-4 shadow-sm border-b border-muted" : "bg-transparent py-5 md:py-8",
-        isMenuOpen && "bg-transparent border-none shadow-none"
-      )}>
-        <div className="max-w-7xl mx-auto flex items-center justify-between relative z-[110]">
-          <div className="flex items-center gap-8">
-            <button 
-              className="p-2 hover:bg-black/5 transition-colors focus:outline-none"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6 text-primary" />
-              ) : (
-                <Menu className={cn("h-6 w-6", isScrolled ? "text-primary" : "text-white")} />
-              )}
-            </button>
-            
-            <nav className="hidden lg:flex items-center gap-10">
-              <Link href="/servicios" className={cn("text-[10px] font-bold uppercase tracking-[0.3em] hover-gold", isScrolled ? "text-primary" : "text-white")}>Servicios</Link>
-              <Link href="/#productos" className={cn("text-[10px] font-bold uppercase tracking-[0.3em] hover-gold", isScrolled ? "text-primary" : "text-white")}>Ringana Fresh</Link>
-              <Link href="/#sobre-mi" className={cn("text-[10px] font-bold uppercase tracking-[0.3em] hover-gold", isScrolled ? "text-primary" : "text-white")}>El Ritual</Link>
-            </nav>
-          </div>
-
-          <div className="flex items-center gap-4 md:gap-12">
-            <Link href="/" className={cn(
-              "text-base md:text-2xl font-headline tracking-tighter flex items-center gap-1 md:gap-2 transition-all duration-700",
-              showLogo && !isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 pointer-events-none"
-            )}>
-              <span className="font-bold text-primary">Palmira</span>
-              <span className="italic font-normal text-accent">Garde</span>
-            </Link>
-            
-            <a 
-              href="https://palmiragarde.ringana.com/" 
-              target="_blank"
-              className={cn(
-                "text-[8px] md:text-[10px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] bg-primary text-primary-foreground px-3 py-2 md:px-6 md:py-3.5 hover:bg-accent transition-all whitespace-nowrap",
-                isMenuOpen && "opacity-0 pointer-events-none"
-              )}
-            >
-              Tienda Ringana
-            </a>
-          </div>
-        </div>
-      </header>
-
-      <div className={cn(
-        "fixed inset-0 bg-white z-[90] transition-all duration-500 ease-in-out flex flex-col items-center justify-center gap-10",
-        isMenuOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-full"
-      )}>
-        <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-3xl md:text-5xl font-headline font-bold mb-4 text-primary">
-          Palmira <span className="italic font-normal text-accent">Garde</span>
+    <header
+      className={cn(
+        "fixed top-0 inset-x-0 z-[100] transition-all duration-500",
+        scrolled ? "glass" : "bg-transparent"
+      )}
+    >
+      <div className="max-w-7xl mx-auto h-16 px-5 md:px-8 flex items-center justify-between">
+        <Link
+          href="/"
+          className="font-headline font-medium text-lg md:text-xl tracking-tight text-foreground"
+        >
+          Palmira <span className="italic text-primary">Garde</span>
         </Link>
-        
-        <div className="flex flex-col items-center gap-10 text-center">
-          <Link href="/servicios" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic text-primary hover:text-accent transition-colors">Servicios Pro</Link>
-          <Link href="/#productos" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic text-primary hover:text-accent transition-colors">Ringana Fresh</Link>
-          <Link href="/#sobre-mi" onClick={() => setIsMenuOpen(false)} className="text-2xl md:text-3xl font-headline italic text-primary hover:text-accent transition-colors">El Ritual</Link>
-          <a href="https://palmiragarde.ringana.com/" target="_blank" className="text-2xl md:text-3xl font-headline italic text-primary hover:text-accent transition-colors">Shop Online</a>
-        </div>
 
-        <div className="mt-12">
-           <a 
-            href="https://wa.me/qr/4JSUW45MSRMZM1" 
-            target="_blank"
-            className="text-[10px] font-bold uppercase tracking-[0.4em] border-b-2 border-accent pb-2 text-primary hover:text-accent transition-colors"
-          >
-            WhatsApp Directo
-          </a>
-        </div>
+        <a
+          href="#oferta"
+          onClick={() => track("Lead", { content_name: "Header CTA 20 euros" })}
+          className="pill-shine bg-primary text-primary-foreground hover:bg-primary/90 rounded-full h-10 md:h-11 px-5 md:px-6 inline-flex items-center text-xs md:text-sm font-semibold shadow-md shadow-primary/20 transition-all hover:scale-[1.03]"
+        >
+          <span className="md:hidden">Mi oferta 20€</span>
+          <span className="hidden md:inline">Quiero mi oferta</span>
+        </a>
       </div>
-    </>
+    </header>
   );
 }

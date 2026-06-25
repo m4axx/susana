@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===================================================================
+   ROCÍO — Cristal Líquido
+   Marfil cálido · eucalipto · lavanda · agua viva
+   =================================================================== */
+
 @layer base {
   :root {
     --background: 30 20% 98%;
@@ -10,41 +15,51 @@
     --card-foreground: 20 10% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 10% 10%;
-    --primary: 20 10% 10%;
-    --primary-foreground: 30 20% 98%;
+    --primary: 35 45% 68%;
+    --primary-foreground: 20 10% 10%;
     --secondary: 30 15% 90%;
     --secondary-foreground: 20 10% 10%;
     --muted: 30 10% 94%;
-    --muted-foreground: 20 5% 45%;
-    --accent: 35 45% 75%; /* Soft Gold / Champagne */
-    --accent-foreground: 20 10% 10%;
-    --destructive: 0 84.2% 60.2%;
+    --muted-foreground: 20 6% 42%;
+    --accent: 20 10% 12%;
+    --accent-foreground: 30 20% 98%;
+    --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 30 10% 90%;
+    --border: 30 10% 88%;
     --input: 30 10% 90%;
-    --ring: 20 10% 10%;
-    --radius: 0rem; /* Sharp edges for luxury feel */
+    --ring: 35 45% 60%;
+
+    --radius: 1.25rem;
+    --r-pill: 999px;
+    --r-input: 1rem;
+    --r-card: 1.75rem;
+    --r-img: 2rem;
+
+    --chart-1: 168 42% 42%;
+    --chart-2: 258 40% 80%;
+    --chart-3: 165 45% 70%;
+    --chart-4: 40 50% 80%;
+    --chart-5: 175 28% 30%;
   }
-  .dark {
-    --background: 20 10% 5%;
+
+  /* Bloque de oferta + footer: negro invertido con dorado (pico de contraste) */
+  .section-oferta,
+  .section-dark {
+    --background: 20 10% 6%;
     --foreground: 30 20% 98%;
-    --card: 20 10% 8%;
+    --card: 20 10% 10%;
     --card-foreground: 30 20% 98%;
-    --popover: 20 10% 8%;
-    --popover-foreground: 30 20% 98%;
-    --primary: 30 20% 98%;
-    --primary-foreground: 20 10% 5%;
-    --secondary: 20 10% 12%;
+    --primary: 35 45% 70%;
+    --primary-foreground: 20 10% 8%;
+    --secondary: 20 10% 14%;
     --secondary-foreground: 30 20% 98%;
-    --muted: 20 10% 15%;
+    --muted: 20 10% 14%;
     --muted-foreground: 30 10% 70%;
-    --accent: 35 45% 75%;
-    --accent-foreground: 20 10% 5%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 20 10% 15%;
-    --input: 20 10% 15%;
-    --ring: 30 20% 98%;
+    --accent: 35 45% 70%;
+    --accent-foreground: 20 10% 8%;
+    --border: 20 8% 20%;
+    --input: 20 10% 14%;
+    --ring: 35 45% 70%;
   }
 }
 
@@ -53,15 +68,172 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body antialiased selection:bg-accent/30;
+    @apply bg-background text-foreground font-body antialiased;
+    selection-color: hsl(var(--primary-foreground));
+  }
+  ::selection {
+    background: hsl(var(--primary) / 0.25);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline tracking-tight;
   }
 }
 
-/* Custom Smooth Transitions */
-.hover-gold:hover {
+/* ---------- Grano marfil (1 sola capa global, textura papel-spa) ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Cápsulas pétalo (máscaras orgánicas contenidas) ---------- */
+.petal {
+  border-radius: 2rem 0.6rem 2rem 0.6rem;
+}
+.petal-alt {
+  border-radius: 0.6rem 2rem 0.6rem 2rem;
+}
+
+/* ---------- Tarjeta bold (sólida, sombra fuerte) ---------- */
+.glass {
+  background: hsl(0 0% 100% / 0.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 24px 50px -28px hsl(20 10% 10% / 0.28);
+}
+.glass-dark {
+  background: hsl(20 10% 10%);
+  border: 1px solid hsl(20 8% 20%);
+  box-shadow: 0 24px 60px -28px hsl(0 0% 0% / 0.6);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass { background: hsl(0 0% 100% / 0.98); }
+}
+
+/* ---------- Blobs de color vibrante (energía de fondo) ---------- */
+.aurora {
+  position: absolute;
+  inset: -20% -10%;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(50px);
+  will-change: transform, opacity;
+  background:
+    radial-gradient(55% 45% at 25% 15%, hsl(35 45% 68% / 0.18), transparent 68%),
+    radial-gradient(48% 40% at 82% 72%, hsl(35 35% 55% / 0.12), transparent 70%);
+  animation: auroraBreathe 24s ease-in-out infinite;
+}
+.aurora-soft {
+  background:
+    radial-gradient(50% 42% at 80% 20%, hsl(35 45% 68% / 0.14), transparent 70%),
+    radial-gradient(45% 40% at 18% 82%, hsl(35 35% 60% / 0.1), transparent 70%);
+}
+@keyframes auroraBreathe {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.7; }
+  50% { transform: translate3d(2%, -2%, 0) scale(1.06); opacity: 1; }
+}
+
+/* ---------- Barrido especular en pills (gota viajera) ---------- */
+.pill-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.pill-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, hsl(0 0% 100% / 0.55) 50%, transparent 70%);
+  background-size: 220% 100%;
+  background-position: 180% 0;
+  transition: background-position 0.6s ease;
+}
+.pill-shine:hover::after,
+.pill-shine:active::after {
+  background-position: -40% 0;
+}
+
+/* ---------- Halo pulse del CTA de oferta (único loop en zona conversión) ---------- */
+@keyframes haloPulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(35 45% 70% / 0); }
+  50% { box-shadow: 0 0 0 10px hsl(35 45% 70% / 0.22); }
+}
+.halo-pulse { animation: haloPulse 4.5s ease-in-out infinite; }
+
+/* ---------- WhatsApp flotante micro-respiración ---------- */
+@keyframes waBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.035); }
+}
+.wa-breathe { animation: waBreathe 3.5s ease-in-out infinite; }
+
+/* ---------- Subrayado-savia (trazo SVG dibujado) ---------- */
+.sap-underline { position: relative; display: inline-block; }
+.sap-underline svg {
+  position: absolute;
+  left: -2%;
+  bottom: -0.32em;
+  width: 104%;
+  height: 0.42em;
+  overflow: visible;
+  pointer-events: none;
+}
+.sap-underline path {
+  fill: none;
+  stroke: hsl(var(--accent));
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+}
+.sap-underline.sap-draw path {
+  animation: sapDraw 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.sap-underline.sap-static path { stroke-dashoffset: 0; }
+@keyframes sapDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ---------- Filete-tallo (separador botánico) ---------- */
+.tallo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   color: hsl(var(--accent));
-  transition: color 0.3s ease;
+}
+.tallo::before,
+.tallo::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: hsl(var(--border));
+}
+
+/* ---------- Float perpetuo (solo foto producto) ---------- */
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.float-soft { animation: floatSoft 7s ease-in-out infinite; }
+
+.hover-gold:hover { color: hsl(var(--primary)); transition: color 0.3s ease; }
+
+/* El banner de cookies eleva los CTAs flotantes para no solaparse */
+body.cookie-open .wa-float { bottom: 6rem; }
+body.cookie-open .mobile-sticky { bottom: 5.5rem; }
+
+/* ---------- Accesibilidad: respeta reduced-motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .aurora, .halo-pulse, .wa-breathe, .float-soft { animation: none !important; }
+  .sap-underline path { stroke-dashoffset: 0 !important; animation: none !important; }
+  .pill-shine::after { transition: none !important; }
+  html { scroll-behavior: auto; }
 }

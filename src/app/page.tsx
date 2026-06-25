@@ -1,28 +1,31 @@
-
 import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
-import { WellnessTip } from "@/components/sections/WellnessTip";
+import { TrustStrip } from "@/components/sections/TrustStrip";
 import { AboutMe } from "@/components/sections/AboutMe";
 import { ProductGateway } from "@/components/sections/ProductGateway";
-import { Promotions } from "@/components/sections/Promotions";
-import { Publications } from "@/components/sections/Publications";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { OfferForm } from "@/components/sections/OfferForm";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
-import { ServicesFloatingCTA } from "@/components/sections/ServicesFloatingCTA";
+import { WhatsAppFloating } from "@/components/sections/WhatsAppFloating";
+import { MobileStickyBar } from "@/components/sections/MobileStickyBar";
 
+// Orden definitivo de la landing de campaña (brief BreoganOnline):
+// 1 Hero · 2 Palmira · 3 Diferencial · 4 Testimonios · 5 Oferta+Form · 6 WhatsApp · 7 Footer
 export default function Home() {
   return (
     <main className="min-h-screen relative">
       <Header />
       <Hero />
-      <WellnessTip />
+      <TrustStrip />
       <AboutMe />
       <ProductGateway />
-      <Promotions />
-      <Publications />
+      <Testimonials />
+      <OfferForm />
       <FinalCTA />
       <Footer />
-      <ServicesFloatingCTA />
+      <WhatsAppFloating />
+      <MobileStickyBar />
     </main>
   );
 }

@@ -1,114 +1,84 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Leaf, ShieldCheck, Zap } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+"use client";
 
-const RINGANA_FEATURES = [
-  {
-    icon: <Leaf className="h-6 w-6 text-accent" />,
-    title: "100% Frescura",
-    description: "Sin conservantes artificiales ni aditivos químicos. Solo la fuerza pura de la naturaleza entregada directamente."
-  },
-  {
-    icon: <ShieldCheck className="h-6 w-6 text-accent" />,
-    title: "Sostenibilidad Real",
-    description: "Envases ecológicos y procesos de producción con huella de carbono neutra y ética innegociable."
-  },
-  {
-    icon: <Zap className="h-6 w-6 text-accent" />,
-    title: "Eficacia Activa",
-    description: "Sustancias vegetales altamente concentradas que actúan de inmediato, elevando tu ritual diario."
-  }
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Leaf, Snowflake, Heart, MapPin, ArrowRight } from "lucide-react";
+import { track } from "@/lib/pixel";
+import { Reveal, RevealGroup, RevealItem } from "@/components/ui/reveal";
+import { Aurora, Tallo } from "@/components/ui/decor";
+
+const FEATURES = [
+  { icon: Leaf, title: "100% Vegana", desc: "Solo activos vegetales puros. Nada de origen animal." },
+  { icon: Snowflake, title: "Fresca de verdad", desc: "Sin conservantes ni aditivos. Nutrientes vivos." },
+  { icon: Heart, title: "Cruelty-free", desc: "Nunca testada en animales. Ética innegociable." },
+  { icon: MapPin, title: "Hecha en Austria", desc: "Producción directa, recién hecha, sin almacén." },
 ];
 
 export function ProductGateway() {
-  const ringanaLogo = PlaceHolderImages.find(img => img.id === "ringana-logo");
-
   return (
-    <section className="py-32 px-6 bg-white" id="productos">
-      <div className="max-w-7xl mx-auto space-y-32">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
+    <section className="relative py-20 md:py-32 px-6 bg-background overflow-clip" id="productos">
+      <Aurora />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <Reveal className="max-w-2xl mb-14 md:mb-20">
+          <span className="font-accent italic text-accent-foreground/80 text-base block mb-3">
+            por qué Ringana
+          </span>
+          <h2 className="font-headline font-light text-4xl md:text-6xl leading-[1.05] tracking-tight">
+            Frescura que se nota en la piel
+          </h2>
+        </Reveal>
+
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Foto producto flotando con halo lavanda */}
+          <Reveal dir="left" className="relative">
+            <div className="absolute inset-0 -m-6 rounded-full bg-accent/15 blur-3xl" aria-hidden />
+            <div className="relative float-soft petal overflow-hidden aspect-[4/5] max-w-md mx-auto shadow-2xl shadow-primary/15">
+              <Image
+                src="https://picsum.photos/seed/ringana-fresh/1000/1250"
+                alt="Cosmética fresca Ringana"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+
+          {/* Tarjetas glass */}
           <div className="space-y-8">
-            <div className="relative w-48 h-12">
-              {ringanaLogo && (
-                <Image 
-                  src={ringanaLogo.imageUrl}
-                  alt="Ringana Official Partner"
-                  fill
-                  className="object-contain opacity-100"
-                  data-ai-hint="ringana logo brand"
-                  unoptimized
-                />
-              )}
-            </div>
-            <div className="space-y-4">
-              <span className="text-accent uppercase tracking-[0.4em] text-[10px] font-bold block">Elite Partnership</span>
-              <h2 className="text-5xl md:text-7xl font-headline italic leading-none">Ringana <br/>Freshness</h2>
-            </div>
+            <RevealGroup className="grid sm:grid-cols-2 gap-5">
+              {FEATURES.map(({ icon: Icon, title, desc }) => (
+                <RevealItem key={title}>
+                  <motion.div
+                    whileHover={{ y: -3 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                    className="glass rounded-[1.75rem] p-6 h-full hover:shadow-xl hover:shadow-primary/10 transition-shadow"
+                  >
+                    <div className="h-11 w-11 rounded-full bg-secondary flex items-center justify-center mb-4">
+                      <Icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <h3 className="font-headline text-xl mb-1.5">{title}</h3>
+                    <p className="text-muted-foreground text-sm font-light leading-relaxed">{desc}</p>
+                  </motion.div>
+                </RevealItem>
+              ))}
+            </RevealGroup>
+
+            <Reveal delay={0.1}>
+              <Button
+                className="pill-shine bg-primary text-primary-foreground hover:bg-primary/90 rounded-full h-14 px-8 text-sm font-semibold shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] group"
+                asChild
+              >
+                <a href="#oferta" onClick={() => track("Lead", { content_name: "Diferencial CTA 20 euros" })} className="inline-flex items-center gap-2">
+                  Quiero probarlo con 20€
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
+            </Reveal>
           </div>
-          <p className="text-muted-foreground max-w-md font-light leading-relaxed text-lg">
-            He seleccionado Ringana por ser la única marca que garantiza una frescura total, entregando nutrientes vivos directamente desde su laboratorio austríaco a tu hogar.
-          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="relative aspect-square md:aspect-[4/5] overflow-hidden bg-[#FAF9F6] border border-muted shadow-2xl group">
-             <Image 
-                src="https://picsum.photos/seed/ringana-fresh/1000/1250" 
-                alt="Ringana Freshness Experience" 
-                fill 
-                className="object-cover transition-transform duration-[3s] group-hover:scale-105"
-                data-ai-hint="luxury skincare"
-             />
-             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-             <div className="absolute bottom-0 left-0 bg-white p-10 md:p-16 max-w-xs md:max-w-sm">
-                <div className="space-y-6">
-                   <h3 className="text-3xl font-headline italic">Filosofía Fresca</h3>
-                   <p className="text-muted-foreground text-sm font-light leading-relaxed">
-                      Descubre cómo la cosmética fresca transforma tu piel mediante ingredientes vegetales puros y una ética innegociable.
-                   </p>
-                   <Button 
-                    variant="outline" 
-                    className="rounded-none px-0 h-auto text-[10px] tracking-[0.3em] uppercase font-bold border-none hover:bg-transparent hover:text-accent group/btn" 
-                    asChild
-                  >
-                    <a href="https://palmiragarde.ringana.com/" target="_blank" className="flex items-center gap-4">
-                      Explorar Catálogo <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-2" />
-                    </a>
-                  </Button>
-                </div>
-             </div>
-          </div>
-
-          <div className="space-y-16">
-            {RINGANA_FEATURES.map((feature, idx) => (
-              <div key={idx} className="flex gap-8 group">
-                <div className="shrink-0 p-4 bg-accent/5 rounded-full h-fit group-hover:bg-accent group-hover:text-white transition-all duration-500">
-                  {feature.icon}
-                </div>
-                <div className="space-y-4">
-                  <h4 className="text-2xl font-headline italic">{feature.title}</h4>
-                  <p className="text-muted-foreground font-light leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-            
-            <div className="pt-8 border-t border-muted">
-               <div className="bg-primary text-primary-foreground p-10 space-y-6 shadow-2xl">
-                  <h4 className="text-accent text-[10px] font-bold uppercase tracking-[0.4em]">Promoción Ringana</h4>
-                  <p className="font-headline text-3xl italic">20€ de regalo en tu primer pedido de frescura.</p>
-                  <Button 
-                    className="bg-accent text-black hover:bg-white rounded-none h-14 px-10 text-[10px] tracking-[0.3em] uppercase font-bold transition-all w-full"
-                    asChild
-                  >
-                    <a href="https://wa.me/qr/4JSUW45MSRMZM1" target="_blank">Reclamar mi Cheque</a>
-                  </Button>
-               </div>
-            </div>
-          </div>
-        </div>
+        <Tallo className="max-w-[140px] mx-auto mt-16 md:mt-24" />
       </div>
     </section>
   );

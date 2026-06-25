@@ -1,9 +1,27 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
+import { Fraunces, Inter } from 'next/font/google';
 import './globals.css';
+import { CookieConsent } from '@/components/sections/CookieConsent';
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-fraunces',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
-  title: 'Palmira Garde | Premium Beauty & Skincare',
-  description: 'Descubre la excelencia en cosmética natural y maquillaje profesional. Asesoramiento exclusivo por Palmira Garde.',
+  title: 'Palmira Garde | Cosmética Fresca Ringana',
+  description:
+    'Cosmética natural y fresca de Ringana, sin conservantes. Reclama tu código de bienvenida de 20€ con Palmira Garde.',
 };
 
 export default function RootLayout({
@@ -12,13 +30,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="es"
+      className={`${fraunces.variable} ${inter.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+        {/* Verificación de dominio Meta — Ramses entrega el código desde Business Suite > Dominios */}
+        <meta name="facebook-domain-verification" content="PENDIENTE_CODIGO_RAMSES" />
       </head>
-      <body className="font-body antialiased overflow-x-hidden" suppressHydrationWarning>{children}</body>
+      <body className="font-body antialiased overflow-x-hidden" suppressHydrationWarning>
+        {children}
+        <CookieConsent />
+        {/* Meta Pixel noscript fallback */}
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=3838200989821889&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
+      </body>
     </html>
   );
 }

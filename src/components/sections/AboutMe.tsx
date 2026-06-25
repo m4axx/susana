@@ -1,47 +1,82 @@
+"use client";
+
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Reveal } from "@/components/ui/reveal";
+import { Aurora, SapWord, Tallo } from "@/components/ui/decor";
 
 export function AboutMe() {
   const profileImg = PlaceHolderImages.find((img) => img.id === "about-me");
 
   return (
-    <section className="py-32 px-6 bg-[#FAF9F6]" id="sobre-mi">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
-        <div className="relative aspect-[3/2] w-full max-w-lg mx-auto overflow-hidden group shadow-2xl">
-          {profileImg?.imageUrl ? (
-            <Image
-              src={profileImg.imageUrl}
-              alt="Palmira Garde"
-              fill
-              className="object-cover transition-all duration-[2s] hover:scale-105"
-              data-ai-hint="professional beauty portrait"
-            />
-          ) : (
-            <div className="w-full h-full bg-muted animate-pulse" />
-          )}
-          <div className="absolute inset-0 border-[12px] border-white/30 m-4" />
+    <section className="relative py-20 md:py-32 px-6 bg-background overflow-clip" id="sobre-mi">
+      <Aurora soft />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <Tallo className="max-w-[140px] mx-auto mb-16 md:mb-24" />
+
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+          {/* Retrato en cápsula pétalo */}
+          <Reveal dir="left" className="order-1">
+            <div className="petal-alt overflow-hidden aspect-[3/4] sm:aspect-[4/5] w-full max-w-md mx-auto bg-white p-1 shadow-2xl shadow-primary/15 ring-1 ring-border">
+              <div className="petal-alt overflow-hidden w-full h-full relative">
+                {profileImg?.imageUrl ? (
+                  <Image
+                    src={profileImg.imageUrl}
+                    alt="Palmira Garde"
+                    fill
+                    className="object-cover transition-transform duration-[2000ms] hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-muted animate-pulse" />
+                )}
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Texto sobre marfil sólido */}
+          <div className="order-2 space-y-7">
+            <Reveal className="space-y-3">
+              <span className="font-accent italic text-accent-foreground/80 text-base block">
+                Hola, soy Palmira
+              </span>
+              <h2 className="font-headline font-light text-4xl md:text-6xl leading-[1.05] tracking-tight">
+                Cosmética honesta, <br />
+                <SapWord className="text-primary">de mujer a mujer</SapWord>
+              </h2>
+            </Reveal>
+
+            <div className="space-y-6 text-muted-foreground font-light text-base md:text-[17px] leading-relaxed">
+              <Reveal delay={0.05}>
+                <p>
+                  Durante años probé cremas que prometían milagros y solo dejaban
+                  la cartera vacía. Hasta que descubrí la cosmética fresca de
+                  Ringana y entendí que la piel no necesita más química: necesita
+                  ingredientes <span className="text-foreground font-normal">vivos</span>.
+                </p>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <p>
+                  Hoy soy asesora Ringana porque creo en lo que uso cada mañana.
+                  Sin conservantes, sin humo, sin promesas vacías. Solo frescura
+                  real que se nota.
+                </p>
+              </Reveal>
+              <Reveal delay={0.15}>
+                <p>
+                  Te acompaño paso a paso para encontrar tu ritual y estrenarlo
+                  con tu código de bienvenida de 20€.
+                </p>
+              </Reveal>
+            </div>
+
+            <Reveal delay={0.2} className="pt-2">
+              <p className="font-headline italic text-3xl md:text-4xl text-foreground">Palmira</p>
+            </Reveal>
+          </div>
         </div>
-        <div className="space-y-12">
-          <div className="space-y-4">
-            <span className="text-accent uppercase tracking-[0.5em] text-[10px] font-bold block">The Visionary</span>
-            <h2 className="text-5xl md:text-7xl font-headline leading-none">Palmira <br/><span className="italic font-normal">Garde</span></h2>
-          </div>
-          <div className="space-y-8 text-muted-foreground font-light text-xl leading-relaxed">
-            <p>
-              Bienvenida a mi universo de belleza consciente. Soy Palmira, y mi propósito es redefinir lo que significa cuidarse.
-            </p>
-            <p>
-              En un mundo saturado de promesas vacías, apuesto por la eficacia real de la cosmética natural y el poder transformador de un maquillaje profesional respetuoso con tu piel.
-            </p>
-            <p>
-              Como tu asesora personal, te guío para simplificar tu ritual, elevando cada gesto a una experiencia de puro lujo y bienestar.
-            </p>
-          </div>
-          <div className="pt-10 flex items-center gap-6">
-             <div className="h-[1px] w-24 bg-accent" />
-             <p className="font-headline italic text-3xl text-primary">Estética & Alma</p>
-          </div>
-        </div>
+
+        <Tallo className="max-w-[140px] mx-auto mt-16 md:mt-24" />
       </div>
     </section>
   );
