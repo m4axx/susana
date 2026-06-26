@@ -36,8 +36,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Verificación de dominio Meta — Ramses entrega el código desde Business Suite > Dominios */}
-        <meta name="facebook-domain-verification" content="PENDIENTE_CODIGO_RAMSES" />
+        {/* Verificación de dominio Meta (Business Suite > Dominios) */}
+        <meta name="facebook-domain-verification" content="ev5ksnuk8pzzwbx1zlrxs2q5nudpbz" />
       </head>
       <body className="font-body antialiased overflow-x-hidden" suppressHydrationWarning>
         {children}
