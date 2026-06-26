@@ -43,7 +43,16 @@ export function loadPixel() {
 
   window.fbq?.("init", PIXEL_ID);
   window.fbq?.("track", "PageView");
+
+  // Vacía los eventos que se pidieron antes de tener consentimiento (p.ej. ViewContent).
+  if (pendingEvents.length) {
+    pendingEvents.forEach(([e, p]) => window.fbq?.("track", e, p));
+    pendingEvents = [];
+  }
 }
+
+// Cola de eventos pedidos antes de cargar el píxel (consentimiento aún no dado).
+let pendingEvents: Array<[string, Record<string, any> | undefined]> = [];
 
 // Dispara un evento estándar (Lead, Contact, ViewContent...).
 // No hace nada si el píxel aún no se ha cargado (sin consentimiento) -> RGPD safe.
@@ -51,6 +60,17 @@ export function track(event: string, params?: Record<string, any>) {
   if (typeof window === "undefined") return;
   if (typeof window.fbq === "function") {
     window.fbq("track", event, params);
+  }
+}
+
+// Como track(), pero si el píxel aún no está cargado (sin consentimiento) deja el
+// evento en cola y se dispara en cuanto el usuario acepta cookies. Para ViewContent.
+export function trackWhenReady(event: string, params?: Record<string, any>) {
+  if (typeof window === "undefined") return;
+  if (typeof window.fbq === "function") {
+    window.fbq("track", event, params);
+  } else {
+    pendingEvents.push([event, params]);
   }
 }
 

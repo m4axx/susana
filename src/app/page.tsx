@@ -9,6 +9,7 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
 import { WhatsAppFloating } from "@/components/sections/WhatsAppFloating";
 import { MobileStickyBar } from "@/components/sections/MobileStickyBar";
+import { ViewContentTracker } from "@/components/sections/ViewContentTracker";
 
 // Orden definitivo de la landing de campaña (brief BreoganOnline):
 // 1 Hero · 2 Palmira · 3 Diferencial · 4 Testimonios · 5 Oferta+Form · 6 WhatsApp · 7 Footer
@@ -26,6 +27,7 @@ export default function Home() {
       <Footer />
       <WhatsAppFloating />
       <MobileStickyBar />
+      <ViewContentTracker />
     </main>
   );
 }
