@@ -31,7 +31,7 @@ export function FinalCTA() {
             asChild
           >
             <a
-              href={whatsappUrl("Hola Palmira, quiero hablar sobre mi ritual Ringana.")}
+              href={whatsappUrl("Hola Palmira, quiero hablar sobre mi ritual de Ringana y LimeLife.")}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => track("Contact")}

@@ -2,6 +2,7 @@ import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { AboutMe } from "@/components/sections/AboutMe";
+import { BrandDuo } from "@/components/sections/BrandDuo";
 import { ProductGateway } from "@/components/sections/ProductGateway";
 import { LimeLifeShowcase } from "@/components/sections/LimeLifeShowcase";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -21,6 +22,7 @@ export default function Home() {
       <Hero />
       <TrustStrip />
       <AboutMe />
+      <BrandDuo />
       <ProductGateway />
       <LimeLifeShowcase />
       <Testimonials />

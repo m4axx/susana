@@ -19,7 +19,7 @@ export function WhatsAppFloating() {
     <AnimatePresence>
       {visible && (
         <motion.a
-          href={whatsappUrl("Hola Palmira, quiero información sobre Ringana.")}
+          href={whatsappUrl("Hola Palmira, quiero información sobre Ringana y LimeLife.")}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("Contact")}

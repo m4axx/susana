@@ -35,7 +35,7 @@ export function Hero() {
         {heroImg?.imageUrl && (
           <Image
             src={heroImg.imageUrl}
-            alt="Cosmética fresca Ringana — Palmira Garde"
+            alt="Ringana y LimeLife — Palmira Garde"
             fill
             className="object-cover"
             priority
@@ -58,7 +58,7 @@ export function Hero() {
           variants={item}
           className="inline-flex items-center gap-2 self-start bg-primary text-primary-foreground rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mb-5"
         >
-          <Leaf className="h-3.5 w-3.5" /> Cosmética fresca Ringana
+          <Leaf className="h-3.5 w-3.5" /> Ringana · LimeLife
         </motion.span>
 
         <motion.h1
@@ -96,7 +96,7 @@ export function Hero() {
             asChild
           >
             <a
-              href={whatsappUrl("Hola Palmira, quiero información sobre Ringana.")}
+              href={whatsappUrl("Hola Palmira, quiero información sobre Ringana y LimeLife.")}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => track("Contact")}

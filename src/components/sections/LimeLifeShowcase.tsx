@@ -23,13 +23,13 @@ export function LimeLifeShowcase() {
     <section className="section-dark relative py-20 md:py-32 px-6 bg-background text-foreground overflow-clip" id="limelife">
       <div className="relative z-10 max-w-7xl mx-auto">
         <Reveal className="text-center mb-12 md:mb-16 space-y-6">
-          <span className="font-accent italic text-accent text-base block">mi boutique de maquillaje</span>
+          <span className="font-accent italic text-accent text-base block">marca 02 · maquillaje profesional</span>
           <div className="relative h-14 w-48 md:h-20 md:w-72 mx-auto">
             <Image src="/Newlogo.svg" alt="LimeLife" fill className="object-contain brightness-0 invert" />
           </div>
           <p className="text-muted-foreground max-w-xl mx-auto font-light leading-relaxed">
             Maquillaje profesional de alta pigmentación con ingredientes limpios.
-            El complemento perfecto a tu rutina Ringana.
+            Color que dura, piel que respira y un acabado impecable bajo cualquier luz.
           </p>
         </Reveal>
 

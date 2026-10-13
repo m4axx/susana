@@ -19,9 +19,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Palmira Garde | Cosmética Fresca Ringana',
+  title: 'Palmira Garde | Cosmética Ringana y Maquillaje LimeLife',
   description:
-    'Cosmética natural y fresca de Ringana, sin conservantes. Reclama tu código de bienvenida de 20€ con Palmira Garde.',
+    'Cosmética fresca Ringana y maquillaje profesional LimeLife. Reclama tu código de bienvenida de 20€ con Palmira Garde.',
 };
 
 export default function RootLayout({

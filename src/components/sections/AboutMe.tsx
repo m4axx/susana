@@ -57,9 +57,9 @@ export function AboutMe() {
               </Reveal>
               <Reveal delay={0.1}>
                 <p>
-                  Hoy soy asesora Ringana porque creo en lo que uso cada mañana.
-                  Sin conservantes, sin humo, sin promesas vacías. Solo frescura
-                  real que se nota.
+                  Hoy soy asesora de Ringana para el cuidado de la piel y de
+                  LimeLife para el maquillaje, porque creo en lo que uso cada
+                  mañana. Sin humo, sin promesas vacías: resultados que se notan.
                 </p>
               </Reveal>
               <Reveal delay={0.15}>

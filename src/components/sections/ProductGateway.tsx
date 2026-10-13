@@ -22,9 +22,10 @@ export function ProductGateway() {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <Reveal className="max-w-2xl mb-14 md:mb-20">
-          <span className="font-accent italic text-accent-foreground/80 text-base block mb-3">
-            por qué Ringana
+          <span className="font-accent italic text-accent-foreground/80 text-base block mb-4">
+            marca 01 · cuidado de la piel
           </span>
+          <img src="/ringana-logo.svg" alt="Ringana" className="h-12 md:h-16 w-auto mb-5" />
           <h2 className="font-headline font-light text-4xl md:text-6xl leading-[1.05] tracking-tight">
             Frescura que se nota en la piel
           </h2>
@@ -70,7 +71,7 @@ export function ProductGateway() {
                 asChild
               >
                 <a href="#oferta" onClick={() => track("Lead", { content_name: "Diferencial CTA 20 euros" })} className="inline-flex items-center gap-2">
-                  Quiero probarlo con 20€
+                  Probar Ringana con 20€
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>

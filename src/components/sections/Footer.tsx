@@ -19,8 +19,8 @@ export function Footer() {
               </span>
             </div>
             <p className="text-muted-foreground font-light leading-relaxed max-w-xs text-sm">
-              Cosmética fresca Ringana. Piel sana, conciencia limpia. De mujer a
-              mujer.
+              Cosmética fresca Ringana y maquillaje LimeLife. Piel sana,
+              conciencia limpia. De mujer a mujer.
             </p>
             <div className="flex items-center gap-3 pt-1">
               <a href="#" aria-label="Instagram" className="h-10 w-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
@@ -36,7 +36,8 @@ export function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-[0.25em] text-foreground/70">Explora</h4>
             <ul className="space-y-3 text-muted-foreground text-sm font-light">
               <li><a href="#sobre-mi" className="hover:text-primary transition-colors">Sobre Palmira</a></li>
-              <li><a href="#productos" className="hover:text-primary transition-colors">Por qué Ringana</a></li>
+              <li><a href="#productos" className="hover:text-primary transition-colors">Ringana</a></li>
+              <li><a href="#limelife" className="hover:text-primary transition-colors">LimeLife</a></li>
               <li><a href="#testimonios" className="hover:text-primary transition-colors">Testimonios</a></li>
               <li><a href="#oferta" className="hover:text-primary transition-colors">Mi código 20€</a></li>
             </ul>
@@ -52,7 +53,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-5 text-xs text-muted-foreground">
-          <p>&copy; {year} Palmira Garde · Cosmética fresca Ringana.</p>
+          <p>&copy; {year} Palmira Garde · Ringana &amp; LimeLife.</p>
           <div className="flex flex-wrap justify-center gap-x-7 gap-y-2">
             <a href="/aviso-legal" className="hover:text-primary transition-colors">Aviso legal</a>
             <a href="/privacidad" className="hover:text-primary transition-colors">Privacidad</a>
