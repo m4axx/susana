@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { AboutMe } from "@/components/sections/AboutMe";
 import { ProductGateway } from "@/components/sections/ProductGateway";
+import { LimeLifeShowcase } from "@/components/sections/LimeLifeShowcase";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { OfferForm } from "@/components/sections/OfferForm";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -21,6 +22,7 @@ export default function Home() {
       <TrustStrip />
       <AboutMe />
       <ProductGateway />
+      <LimeLifeShowcase />
       <Testimonials />
       <OfferForm />
       <FinalCTA />
